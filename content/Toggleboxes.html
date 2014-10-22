@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Spoilers and Toggleboxes - Quicksilk CMS Design Sheets</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/ToggleBox.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .add('togglebox', function(node){
+                    new Com.ToggleBox({'node' : node});
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="app-page-title">Spoilers and Toggleboxes</h1>
+<hr>
+
+<dl class="com-togglebox has-title-bg is-ui is-hide" data-element="togglebox" data-config='{"remember" : false}'>
+    <dt data-node="ComToggleBox.button">
+        <span class="icon default linked"></span>
+        <span class="title">1. What is the main question?</span>
+    </dt>
+    <dd data-node="ComToggleBox.target">
+        <div class="inner">
+            <p>Answer is 4.3</p>
+        </div>
+    </dd>
+</dl>
+
+</body>
+
+</html>

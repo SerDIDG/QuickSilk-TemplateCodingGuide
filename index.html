@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Quicksilk CMS Design Sheets</title>
+
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" src="libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="libs/common/js/common.js"></script>
+    <script type="text/javascript" src="libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="libs/common/js/init.js"></script>
+    <script type="text/javascript" src="libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="libs/common/js/components/Collector.js"></script>
+    <script type="text/javascript" src="libs/common/js/components/CollapsibleLayout.js"></script>
+    <script type="text/javascript" src="libs/common/js/components/ToggleBox.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .add('sidebar', function(node){
+                    new Com.CollapsibleLayout({
+                        'node' : node
+                    });
+                })
+                .add('togglebox', function(node){
+                    new Com.ToggleBox({'node' : node});
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="com-collapsible-layout" data-element="sidebar" data-config='{"remember" : true, "name" : "sheets-sidebar"}'>
+    <div class="sidebar left" data-node="ComCollapsibleLayout.leftContainer">
+        <div class="inner">
+            <div class="title">
+                <span class="icon medium linked arrow-left" data-node="ComCollapsibleLayout.leftButton"></span>
+                Design Sheets
+            </div>
+            <div class="descr">
+                <dl class="com-togglebox is-show">
+                    <dd data-node="ComToggleBox.target">
+                        <div class="cm-items-list auto">
+                            <ul>
+                                <li>
+                                    <a href="content/Index.html" target="content">Index</a>
+                                </li>
+                                <li>
+                                    <a href="content/Typography.html" target="content">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="content/Form.html" target="content">Form Elements</a>
+                                </li>
+                                <li>
+                                    <a href="content/Breadcrumbs.html" target="content">Breadcrumbs</a>
+                                </li>
+                                <li>
+                                    <a href="content/Menu.html" target="content">Menu</a>
+                                </li>
+                                <li>
+                                    <a href="content/Search.html" target="content">Search</a>
+                                </li>
+                                <li>
+                                    <a href="content/Social.html" target="content">Social and Share</a>
+                                </li>
+                                <li>
+                                    <a href="content/Tabs.html" target="content">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="content/Tags.html" target="content">Tags</a>
+                                </li>
+                                <li>
+                                    <a href="content/Toggleboxes.html" target="content">Toggleboxes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="inner">
+        <iframe name="content" src="content/Index.html"></iframe>
+    </div>
+</div>
+
+</body>
+
+</html>

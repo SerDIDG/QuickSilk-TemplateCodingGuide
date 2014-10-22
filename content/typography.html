@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Quicksilk CMS Design Sheets</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Tooltip.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Select.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Calendar.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Datepicker.js"></script>
+
+    <script type="text/javascript" src="../libs/application/js/Application.js"></script>
+    <script type="text/javascript" src="../libs/application/js/components/ModuleMenu.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .addEvent('onConstruct', function(collector, data){
+                    Part.Menu();
+                    Part.Autoresize(data['node']);
+                })
+                .add('module-menu', function(node){
+                    new App.ModuleMenu({
+                        'node' : node
+                    });
+                })
+                .add('datepicker', function(node){
+                    new Com.Datepicker({'input' : node});
+                })
+                .add('select', function(node){
+                    new Com.Select({'select' : node})
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="cm-page-title">Welcome to the Quicksilk CMS Design Sheets</h1>
+<hr>
+<h2>Notices</h2>
+
+<p>1. Height of buttons and text fields must be equal:</p>
+<div class="cm-toolbar">
+    <div class="inner clear">
+        <div class="left">
+            <ul class="group is-adaptive">
+                <li class="is-field large">
+                    <input type="text">
+                </li>
+            </ul>
+            <ul class="group is-adaptive">
+                <li class="is-field large">
+                    <select data-element="select">
+                        <option>Value 1</option>
+                        <option>Value 2</option>
+                        <option>Value 3</option>
+                    </select>
+                </li>
+            </ul>
+            <ul class="group is-adaptive">
+                <li>
+                    <input class="button-secondary" type="button" value="Cancel">
+                </li>
+                <li>
+                    <input type="button" value="Search">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
