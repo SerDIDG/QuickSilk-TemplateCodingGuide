@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Quicksilk CMS Design Sheets</title>
+    <title>Form Elements - Quicksilk CMS Design Sheets</title>
 
     <link type="text/css" rel="stylesheet" href="../css/index.css">
 
@@ -15,7 +15,10 @@
     <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/Tooltip.js"></script>
-    <script type="text/javascript" src="../libs/common/js/components/Glossary.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Select.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Calendar.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Datepicker.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/TagsInput.js"></script>
 
     <script type="text/javascript" src="../libs/application/js/Application.js"></script>
     <script type="text/javascript" src="../libs/application/js/components/ModuleMenu.js"></script>
@@ -33,6 +36,15 @@
                         'node' : node
                     });
                 })
+                .add('tags', function(node){
+                    new Com.TagsInput({'input' : node});
+                })
+                .add('datepicker', function(node){
+                    new Com.Datepicker({'input' : node});
+                })
+                .add('select', function(node){
+                    new Com.Select({'select' : node})
+                })
                 .construct();
             // Glossary
             Com.GlossaryCollector();
@@ -42,57 +54,182 @@
 
 <body>
 
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
+<h1 class="app-page-title">Form Elements</h1>
 <hr>
 
-<h2>Links</h2>
-<p>
-    <a>Default Link</a>
-</p>
-<p>
-    <span class="com-glossary-word" data-com-glossary="true">
-        <span class="com-glossary-title">Glossary</span>
-        <span class="com-glossary-popup">Glossary Description</span>
-    </span>
-</p>
-<hr>
+<div class="form">
+    <dl>
+        <dt>Field:</dt>
+        <dd>
+            <input type="text" placeholder="Placeholder text">
+        </dd>
+    </dl>
+    <dl>
+        <dt>Textarea:</dt>
+        <dd><textarea></textarea></dd>
+    </dl>
+    <dl>
+        <dt>Select:</dt>
+        <dd>
+            <select data-element="select">
+                <option>Value 1</option>
+                <option>Value 2</option>
+                <option>Value 3</option>
+                <option>Value 4</option>
+                <option>Value 5</option>
+                <option>Value 6</option>
+                <option>Value 7</option>
+                <option>Value 8</option>
+                <option>Value 9</option>
+                <option>Value 10</option>
+                <option>Value 11</option>
+                <option>Value 12</option>
+            </select>
+        </dd>
+    </dl>
+    <dl>
+        <dt>Datepicker:</dt>
+        <dd>
+            <input type="text" name="datepicker1" placeholder="Expires date" data-element="datepicker" readonly>
+        </dd>
+    </dl>
+    <dl>
+        <dt>Checkboxe:</dt>
+        <dd>
+            <div class="check-line">
+                <input id="ch1" type="checkbox" checked>
+                <label for="ch1">On</label>
+                <input id="ch2" type="checkbox">
+                <label for="ch2">Off</label>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>Radio:</dt>
+        <dd>
+            <div class="check-line">
+                <input id="r1" type="radio" name="r1" checked>
+                <label for="r1">Radio 1</label>
+                <input id="r2" type="radio" name="r1">
+                <label for="r2">Radio 2</label>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>Tags:</dt>
+        <dd>
+            <input type="text" data-element="tags" value="tag1, tag2, tag3">
+        </dd>
+    </dl>
+    <dl>
+        <dt>Buttons:</dt>
+        <dd>
+            <div class="btn-wrap left">
+                <input type="submit" value="Primary">
+                <input type="button" value="Secondary" class="button-secondary">
+                <input type="button" value="Transparent" class="button-transparent">
+            </div>
+        </dd>
+    </dl>
+    <hr>
 
-<h2>Paragraph</h2>
-<p>Canada is a country in North America consisting of ten provinces and three territories. Located in the northern part of the continent, it extends from the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million square kilometres in total, Canada is the world's second-largest country by total area and the fourth-largest country by land area. Its common border with the United States is the world's longest land border shared by the same two countries.</p>
-<p>The land that is now Canada has been inhabited for millennia by various Aboriginal peoples. Beginning in the late 15th century, British and French colonies were established on the region's Atlantic coast. As a consequence of various conflicts, the United Kingdom gained and lost North American territories until left, in the late 18th century, with what mostly comprises Canada today. Pursuant to the British North America Act, on July 1, 1867 three colonies joined to form the autonomous federal dominion of Canada. This began an accretion of provinces and territories to the new self-governing dominion. In 1931, Britain granted Canada full independence in most matters with the Statute of Westminster 1931. The Canada Act 1982 severed the vestiges of legal dependence on the British parliament.</p>
-<p>Canada is a federal parliamentary democracy and a constitutional monarchy, with Queen Elizabeth II as its head of state. Canada is a member of the Commonwealth of Nations. The country is officially bilingual at the federal level. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries, with a population of approximately 35 million as of December 2012. Its advanced economy is one of the largest in the world, relying chiefly upon its abundant natural resources and well-developed trade networks. Canada's long and complex relationship with the United States has had a significant impact on its economy and culture.</p>
-<hr>
+    <dl>
+        <dt>Hint:</dt>
+        <dd>
+            <input type="text">
+            <ul class="hint">
+                <li>Hint message 1</li>
+                <li>Hint message 2</li>
+                <li>Hint message 3</li>
+            </ul>
+        </dd>
+    </dl>
+    <dl class="error">
+        <dt>Error:</dt>
+        <dd>
+            <input type="text">
+            <ul class="hint">
+                <li>Error message 1</li>
+                <li>Error message 2</li>
+                <li>Error message 3</li>
+            </ul>
+        </dd>
+    </dl>
+    <dl class="ok">
+        <dt>Success:</dt>
+        <dd>
+            <input type="text">
+            <ul class="hint">
+                <li>Success message 1</li>
+                <li>Success message 2</li>
+                <li>Success message 3</li>
+            </ul>
+        </dd>
+    </dl>
 
-<h2>List</h2>
-<ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dapibus ex, sit amet consequat neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet quam in neque suscipit consequat. </li>
-    <li>Nulla congue dui nec enim tincidunt, non egestas arcu viverra. Nunc laoreet, sem quis viverra lobortis, risus magna efficitur arcu, non gravida nibh turpis sed nibh.</li>
-    <li>Donec venenatis volutpat mauris, in sodales justo tristique at. Donec in pulvinar erat, sit amet sollicitudin erat. Pellentesque a vehicula dui, in pretium diam. Etiam lacinia pharetra ex non tincidunt. Mauris id ornare lacus. Donec gravida augue magna, sit amet semper massa consequat ac. In odio ligula, suscipit sed purus id, pulvinar ultricies odio.</li>
-</ul>
-<hr>
+    <hr>
 
-<h2>Numeric List</h2>
-<ol>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dapibus ex, sit amet consequat neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet quam in neque suscipit consequat. </li>
-    <li>Nulla congue dui nec enim tincidunt, non egestas arcu viverra. Nunc laoreet, sem quis viverra lobortis, risus magna efficitur arcu, non gravida nibh turpis sed nibh.</li>
-    <li>Donec venenatis volutpat mauris, in sodales justo tristique at. Donec in pulvinar erat, sit amet sollicitudin erat. Pellentesque a vehicula dui, in pretium diam. Etiam lacinia pharetra ex non tincidunt. Mauris id ornare lacus. Donec gravida augue magna, sit amet semper massa consequat ac. In odio ligula, suscipit sed purus id, pulvinar ultricies odio.</li>
-</ol>
-<hr>
-
-<h2>Description List</h2>
-<dl>
-    <dt>Canada</dt>
-    <dd>Canada is a country in North America consisting of ten provinces and three territories. Located in the northern part of the continent, it extends from the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million square kilometres in total, Canada is the world's second-largest country by total area and the fourth-largest country by land area. Its common border with the United States is the world's longest land border shared by the same two countries.</dd>
-</dl>
-<dl>
-    <dt>United States</dt>
-    <dd>The United States of America (USA or U.S.A.), commonly referred to as the United States (US or U.S.), America, and sometimes the States, is a federal republic consisting of 50 states and a federal district. The 48 contiguous states and Washington, D.C., are in central North America between Canada and Mexico. The state of Alaska is the northwestern part of North America and the state of Hawaii is an archipelago in the mid-Pacific. The country also has five populated and nine unpopulated territories in the Pacific and the Caribbean. At 3.71 million square miles (9.62 million km2) and with around 318 million people, the United States is the world's 3rd or 4th-largest country by total area and third-largest by population. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries.[18] The geography and climate of the United States is also extremely diverse, and it is home to a wide variety of wildlife.</dd>
-</dl>
+    <dl>
+        <dt>Default No-Avatar:</dt>
+        <dd>
+            <div class="cm-grid is-adaptive">
+                <ul>
+                    <li>
+                        <div class="cm-imagebox is-centered">
+                            <div class="inner">
+                                <img class="descr" alt="" src="../libs/common/img/parts/no-avatar-150.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cm-imagebox is-centered">
+                            <div class="inner">
+                                <img class="descr" alt="" src="../libs/common/img/parts/no-avatar-80.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cm-imagebox is-centered">
+                            <div class="inner">
+                                <img class="descr" alt="" src="../libs/common/img/parts/no-avatar-50.png">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>Default No-Image:</dt>
+        <dd>
+            <div class="cm-grid is-adaptive">
+                <ul>
+                    <li>
+                        <div class="cm-imagebox is-centered">
+                            <div class="inner">
+                                <img class="descr" alt="" src="../libs/common/img/parts/no-image-150.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cm-imagebox is-centered">
+                            <div class="inner">
+                                <img class="descr" alt="" src="../libs/common/img/parts/no-image-80.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cm-imagebox is-centered">
+                            <div class="inner">
+                                <img class="descr" alt="" src="../libs/common/img/parts/no-image-50.png">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </dd>
+    </dl>
+</div>
 
 </body>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Breadcrumbs - Quicksilk CMS Design Sheets</title>
+    <title>Tabs - Quicksilk CMS Design Sheets</title>
 
     <link type="text/css" rel="stylesheet" href="../css/index.css">
 
@@ -14,11 +14,15 @@
     <script type="text/javascript" src="../libs/common/js/init.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Tabset.js"></script>
 
     <script type="text/javascript">
         cm.onReady(function(){
             // Components
             new Com.Collector()
+                .add('tabset', function(node){
+                    new Com.Tabset({'node' : node});
+                })
                 .construct();
         });
     </script>
@@ -26,31 +30,19 @@
 
 <body>
 
-<h1 class="app-page-title">Breadcrumbs</h1>
-<hr>
+<h1 class="app-page-title">Tabs</h1>
 
-<div class="cm-box-content">
-    <div class="com-breadcrumbs">
-        <ul>
-            <li class="back">
-                <a>&laquo; Back</a>
-            </li>
-            <li>
-                <a>Home</a>
-            </li>
-            <li class="sep">&raquo;</li>
-            <li>
-                <a>Components</a>
-            </li>
-            <li class="sep">&raquo;</li>
-            <li>
-                <a>Breadcrumbs</a>
-            </li>
-            <li class="sep">&raquo;</li>
-            <li>Examples</li>
-        </ul>
-    </div>
-</div>
+<ul class="com-tabset-content-ul" data-element="tabset">
+    <li data-node="tabs:[]:container" data-config='{"id" : "tab1", "title" : "Tab 1"}'>
+        <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo eros, sagittis id elit ut, congue tristique erat. Fusce purus nibh, consectetur eu est consectetur, varius sollicitudin metus. Proin eget malesuada velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris pellentesque, metus non facilisis venenatis, lectus mi aliquet lectus, porta sagittis diam dolor eu lacus. Nunc leo mauris, egestas ut hendrerit eget, mattis id massa. Vestibulum finibus, lorem sed tristique sodales, magna magna facilisis ante, non bibendum mauris elit a lorem. Sed tempus mollis arcu ut tempus. Donec sollicitudin pellentesque ornare. Sed rhoncus nulla at rhoncus scelerisque. Aliquam leo ante, efficitur non lacus quis, egestas lacinia nibh.</p>
+    </li>
+    <li data-node="tabs:[]:container" data-config='{"id" : "tab2", "title" : "Tab 2"}'>
+        <p class="margin-none">Quisque tempus ante est, quis posuere purus interdum quis. Quisque rutrum varius blandit. Morbi in purus eu nibh sollicitudin tincidunt ut id nulla. Phasellus congue sagittis eleifend. Nunc interdum semper erat vel eleifend. Mauris efficitur laoreet risus, nec ultrices nunc sagittis in. Proin sit amet ligula luctus, congue urna sit amet, lacinia justo. Nam volutpat dui sit amet mi ultrices, nec faucibus quam imperdiet. Cras posuere libero tincidunt rutrum aliquam. Ut vitae nibh sit amet augue elementum pulvinar. Nam quis nulla nec ipsum venenatis iaculis eu ac massa. Quisque ut odio in ligula facilisis fermentum volutpat vel risus. Sed ante quam, eleifend vel ligula eu, dignissim tincidunt mauris. Morbi dignissim enim nec risus dignissim vulputate.</p>
+    </li>
+    <li data-node="tabs:[]:container" data-config='{"id" : "tab3", "title" : "Tab 3"}'>
+        <p class="margin-none">Quisque suscipit quis erat sed vulputate. Cras a facilisis nunc. Quisque sed fermentum lorem. Suspendisse pharetra leo in quam sollicitudin malesuada. Phasellus facilisis, est nec gravida viverra, mauris odio volutpat dui, eu pellentesque diam magna id orci. Aliquam sit amet ultrices nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas a ornare turpis. Nullam fringilla volutpat volutpat. Mauris euismod sodales varius. Aenean imperdiet turpis efficitur eros vulputate, vitae sodales ipsum pellentesque. Nam a lectus vitae magna aliquet bibendum. Vivamus sed fringilla mauris. Aenean malesuada tortor eu nunc feugiat lobortis. Donec tellus risus, pellentesque egestas tincidunt a, volutpat nec quam.</p>
+    </li>
+</ul>
 
 </body>
 

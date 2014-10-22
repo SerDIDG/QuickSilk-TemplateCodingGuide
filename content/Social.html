@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Share - Quicksilk CMS Design Sheets</title>
+    <title>Social and Share - Quicksilk CMS Design Sheets</title>
 
     <link type="text/css" rel="stylesheet" href="../css/index.css">
 
@@ -14,15 +14,11 @@
     <script type="text/javascript" src="../libs/common/js/init.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
-    <script type="text/javascript" src="../libs/common/js/components/Tabset.js"></script>
 
     <script type="text/javascript">
         cm.onReady(function(){
             // Components
             new Com.Collector()
-                .add('tabset', function(node){
-                    new Com.Tabset({'node' : node});
-                })
                 .construct();
         });
     </script>
@@ -30,206 +26,100 @@
 
 <body>
 
-<h1 class="app-page-title">Share</h1>
+<h1 class="app-page-title">Social and Share</h1>
+<hr>
 
-<ul class="com-tabset-content-ul" data-element="tabset">
-    <li data-node="tabs:[]:container" data-config='{"id" : "social", "title" : "Social Share"}'>
-        <div class="cm-box-content">
-            <h2>Left</h2>
-            <div class="cm-line-share pull-left">
-                <ul>
-                    <li>
-                        <a>
-                            <div class="icon default facebook"></div>
-                            <div class="count">25</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default twitter"></div>
-                            <div class="count">12</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default google"></div>
-                            <div class="count">1</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default favorite"></div>
-                            <div class="count">7</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<div class="cm-box-content">
+    <h2>Social Icons</h2>
+    <div class="cm-line-share pull-left">
+        <ul>
+            <li>
+                <a>
+                    <div class="icon default facebook"></div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="icon default twitter"></div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="icon default google"></div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="icon default favorite"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-        <div class="cm-box-content">
-            <h2>Center</h2>
-            <div class="cm-line-share pull-center">
-                <ul>
-                    <li>
-                        <a>
-                            <div class="icon default facebook"></div>
-                            <div class="count">25</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default twitter"></div>
-                            <div class="count">12</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default google"></div>
-                            <div class="count">1</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default favorite"></div>
-                            <div class="count">7</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<div class="cm-box-content">
+    <h2>Social Share</h2>
+    <div class="cm-line-share pull-left">
+        <ul>
+            <li>
+                <a>
+                    <div class="icon default facebook"></div>
+                    <div class="count">25</div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="icon default twitter"></div>
+                    <div class="count">12</div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="icon default google"></div>
+                    <div class="count">1</div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="icon default favorite"></div>
+                    <div class="count">7</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-        <div class="cm-box-content">
-            <h2>Right</h2>
-            <div class="cm-line-share pull-right">
-                <ul>
-                    <li>
-                        <a>
-                            <div class="icon default facebook"></div>
-                            <div class="count">25</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default twitter"></div>
-                            <div class="count">12</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default google"></div>
-                            <div class="count">1</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="icon default favorite"></div>
-                            <div class="count">7</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </li>
-
-    <li data-node="tabs:[]:container" data-config='{"id" : "rates", "title" : "Rates"}'>
-        <div class="cm-box-content">
-            <h2>Left</h2>
-            <div class="cm-line-share pull-left">
-                <ul>
-                    <li>
-                        <a>
-                            <div class="label">Excellent</div>
-                            <div class="count">25</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Interesting</div>
-                            <div class="count">12</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Useful</div>
-                            <div class="count">1</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Not useful</div>
-                            <div class="count">7</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="cm-box-content">
-            <h2>Center</h2>
-
-            <div class="cm-line-share pull-center">
-                <ul>
-                    <li>
-                        <a>
-                            <div class="label">Excellent</div>
-                            <div class="count">25</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Interesting</div>
-                            <div class="count">12</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Useful</div>
-                            <div class="count">1</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Not useful</div>
-                            <div class="count">7</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="cm-box-content">
-            <h2>Right</h2>
-            <div class="cm-line-share pull-right">
-                <ul>
-                    <li>
-                        <a>
-                            <div class="label">Excellent</div>
-                            <div class="count">25</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Interesting</div>
-                            <div class="count">12</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Useful</div>
-                            <div class="count">1</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <div class="label">Not useful</div>
-                            <div class="count">7</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </li>
-</ul>
+<div class="cm-box-content">
+    <h2>Rates</h2>
+    <div class="cm-line-share pull-left">
+        <ul>
+            <li>
+                <a>
+                    <div class="label">Excellent</div>
+                    <div class="count">25</div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="label">Interesting</div>
+                    <div class="count">12</div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="label">Useful</div>
+                    <div class="count">1</div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="label">Not useful</div>
+                    <div class="count">7</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 </body>
 
