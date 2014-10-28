@@ -7731,7 +7731,7 @@ html.is-immediately .app-template {
   display: block;
   float: left;
   margin: 8px 0 0 12px;
-  background-image: url("../libs/application/img/components/topmenu-logo.png");
+  background-image: url("../libs/application/img/layouts/topmenu/logo.png");
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
@@ -7830,7 +7830,7 @@ html.is-immediately .app-template {
   }
   html.is-adaptive .app-topmenu .menu > li.has-dropdown > a {
     padding-right: 20px;
-    background: url("../libs/application/img/components/topmenu-arrow-down.png") 100% center no-repeat;
+    background: url("../libs/application/img/layouts/topmenu/arrow-down.png") 100% center no-repeat;
   }
   html.is-adaptive .app-topmenu .menu > li:before {
     width: 1px;
@@ -8711,12 +8711,6 @@ html.is-immediately .app-template {
 .app-module-search .icon.default {
   background-image: url("../libs/common/img/icons/small/search.png");
 }
-/* ******* COMPONENT: MODULE SLIDER *******  */
-.app-module-slider .com-slider:last-child,
-.app-module-slider .com-slider-layout:last-child,
-.app-module-slider .cm-toolbar:last-child {
-  margin: 0;
-}
 /* ******* MODULE FORUM ******* */
 /* ******* COMPONENT: MODULE ITEMS ******* */
 /* ******* COMPONENT: MODULE RICH EDITOR ******* */
@@ -8883,6 +8877,23 @@ html.is-immediately .app-template {
 .mod__sign-links ul,
 .mod__sign-links ol {
   margin: 0;
+}
+/* ******* MODULES: SLIDER *******  */
+.mod__slider .com-slider:last-child,
+.mod__slider .com-slider-layout:last-child,
+.mod__slider .cm-toolbar:last-child {
+  margin: 0;
+}
+.mod__slider__featured {
+  height: 110px;
+  width: 110px;
+  position: absolute;
+  z-index: 2;
+  background: url("../libs/application/img/modules/slider/featured.png") 0 0 no-repeat;
+  top: -1px;
+  right: -1px;
+  bottom: auto;
+  left: auto;
 }
 /* *** COLORS *** */
 /* *** FONTS *** */
