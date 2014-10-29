@@ -119,8 +119,19 @@ form {
   text-decoration: none;
 }
 .inner-link {
+  color: #666666;
+  outline: none;
+  text-decoration: underline;
+  cursor: pointer;
   text-decoration: none;
   border-bottom: 1px dashed;
+}
+.inner-link:hover {
+  text-decoration: none;
+  color: #666666;
+}
+.inner-link:hover {
+  text-decoration: none;
 }
 .inner-link:hover {
   text-decoration: none;
@@ -3868,6 +3879,9 @@ button.has-icon-small .icon,
 .lt__post .post-title {
   margin: 0 0 4px;
 }
+.lt__post .post-title .cm-title-editable {
+  margin: 0;
+}
 .lt__post .post-info,
 .lt__post .post-tags {
   font: normal 11px/20px 'Open Sans', sans-serif;
@@ -4061,53 +4075,38 @@ button.has-icon-small .icon,
 .com-tooltip.com__ac-tooltip > .inner > .scroll {
   max-height: 174px;
 }
-/* ******* GLOSSARY ******* */
-.com-glossary-word {
-  position: relative;
-  z-index: 1;
-  color: #005897;
-  border-bottom: 1px dotted #005897;
-  white-space: nowrap;
+/* ******* COMPONENTS: GLOSSARY ******* */
+.com__glossary .com__glossary__title {
+  color: #666666;
+  outline: none;
+  text-decoration: underline;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px dashed;
 }
-.com-glossary-word:hover {
-  border: none;
-  z-index: 2;
+.com__glossary .com__glossary__title:hover {
+  text-decoration: none;
+  color: #666666;
 }
-.com-glossary-title {
-  color: #005897;
+.com__glossary .com__glossary__title:hover {
+  text-decoration: none;
 }
-.com-glossary-word .com-glossary-popup {
-  min-width: 250px;
-  padding: 38px 16px 16px;
+.com__glossary .com__glossary__title:hover {
+  text-decoration: none;
+  border-bottom-color: transparent;
+}
+.com__glossary .com__glossary__content {
   display: none;
-  overflow: hidden;
-  position: absolute;
-  top: -16px;
-  left: -16px;
-  right: -16px;
-  z-index: -1;
-  background-color: #fff;
-  border: 1px solid #dedede;
-  font-size: 11px;
-  line-height: 16px;
-  white-space: normal;
-  color: #595959;
-}
-.com-glossary-word:hover .com-glossary-popup {
-  display: block;
 }
 /* *** TOOLTIP *** */
-.com-tooltip.com-glossary-tooltip {
-  width: 300px;
+.com-tooltip.com__glossary__tooltip {
+  width: 320px;
 }
-.com-tooltip.com-glossary-tooltip > .inner {
+.com-tooltip.com__glossary__tooltip > .inner {
   padding: 12px 16px 16px;
 }
-.com-tooltip.com-glossary-tooltip > .inner > .scroll {
-  max-height: 300px;
-}
-.com-tooltip.com-glossary-tooltip .com-glossary-text p {
-  margin: 0;
+.com-tooltip.com__glossary__tooltip > .inner > .scroll {
+  max-height: 320px;
 }
 /* ******* COMPONENTS: ACTION MENU ******* */
 .com-action-menu .cm-button,
@@ -7934,13 +7933,8 @@ html.is-immediately .app-template {
     float: left;
     margin: 0 0 0 36px;
   }
-  html.is-adaptive .app-topmenu .menu-centered {
-    float: right;
-    margin: 0 0 0 12px;
-  }
   html.is-adaptive .app-topmenu .menu-centered .menu li {
     margin: 0;
-    float: left;
     border-left: 1px solid rgba(255, 255, 255, 0.4);
   }
   html.is-adaptive .app-topmenu .menu-centered .menu li:last-child {
@@ -7955,6 +7949,29 @@ html.is-immediately .app-template {
   }
   html.is-adaptive .app-topmenu .menu-centered .menu a .icon.medium {
     margin: 0;
+  }
+}
+@media only screen and (min-width: 1281px) {
+  html.is-adaptive .app-topmenu .menu-centered {
+    position: absolute;
+    margin: 0 50%;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+  }
+  html.is-adaptive .app-topmenu .menu-centered > .inner {
+    position: relative;
+    left: -50%;
+  }
+  html.is-adaptive .app-topmenu .menu-centered .menu {
+    white-space: nowrap;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  html.is-adaptive .app-topmenu .menu-centered {
+    float: right;
+    margin: 0 0 0 12px;
   }
 }
 /* *** TABLET VIEW *** */
@@ -8046,10 +8063,10 @@ html.is-immediately .app-template {
     transform: translateY(0);
   }
 }
-/* ***  LAYOUTS: TOP MENU: PRINT *** */
+/* *******  LAYOUTS: TOP MENU: PRINT ******* */
 @media print {
   .app-topmenu {
-    display: none;
+    display: none !important;
   }
 }
 .app-lt__templates__scroll {
@@ -8496,7 +8513,7 @@ html.is-immediately .app-template {
 .app-module-divider hr {
   margin: 0;
 }
-/* ******* COMPONENT: MODULE LOGIN LINK ******* */
+/* ******* MODULES: LOGIN LINK ******* */
 .app-module-loginlink ul {
   margin: 0;
   padding: 0;
@@ -8521,12 +8538,18 @@ html.is-immediately .app-template {
   display: none;
   vertical-align: middle;
 }
+/* ******* MODULES: LOGIN LINK: PRINT ******* */
+@media print {
+  .app-module-loginlink {
+    display: none !important;
+  }
+}
 /* ******* MODULE LISTING ******* */
 /* ******* COMPONENT: MODULE LOGO ******* */
 .app-module-logo a {
   display: block;
 }
-/* ******* MODULE MENU ******* */
+/* ******* MODULES: MENU ******* */
 .app-module-menu > ul {
   padding: 0;
   margin: 0;
@@ -8686,6 +8709,14 @@ html.is-immediately .app-template {
   vertical-align: middle;
   color: #666666;
 }
+.app-module-menu.vertical.pull-right ul ul {
+  margin-left: 0;
+  margin-right: 24px;
+}
+.app-module-menu.vertical.pull-center ul ul {
+  margin-left: 0;
+  margin-right: 0;
+}
 .app-module-menu.pull-left > ul {
   text-align: left;
 }
@@ -8695,7 +8726,7 @@ html.is-immediately .app-template {
 .app-module-menu.pull-right > ul {
   text-align: right;
 }
-/* *** ADAPTIVE *** */
+/* ******* MODULES: MENU: ADAPTIVE ******* */
 @media only screen and (max-width: 768px) {
   html.is-adaptive .app-module-menu:not(.vertical) > ul {
     display: none;
@@ -8704,12 +8735,24 @@ html.is-immediately .app-template {
     display: block;
   }
 }
-/* ******* COMPONENT: MODULE SEARCH ******* */
+/* *******  MODULES: MENU: PRINT ******* */
+@media print {
+  .app-module-menu {
+    display: none !important;
+  }
+}
+/* ******* MODULES: SEARCH ******* */
 .app-module-search dt {
   display: none;
 }
 .app-module-search .icon.default {
   background-image: url("../libs/common/img/icons/small/search.png");
+}
+/* *******  MODULES: SEARCH: PRINT ******* */
+@media print {
+  .app-module-search {
+    display: none !important;
+  }
 }
 /* ******* MODULE FORUM ******* */
 /* ******* COMPONENT: MODULE ITEMS ******* */
@@ -8894,6 +8937,13 @@ html.is-immediately .app-template {
   right: -1px;
   bottom: auto;
   left: auto;
+}
+/* ******* MODULES: SOCIAL MEDIA ******* */
+/* *******  MODULES: SOCIAL MEDIA: PRINT ******* */
+@media print {
+  .mod__social-media {
+    display: none !important;
+  }
 }
 /* *** COLORS *** */
 /* *** FONTS *** */

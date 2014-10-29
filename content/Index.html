@@ -48,9 +48,10 @@
                         'node' : node
                     });
                 })
+                .add('glossary', function(node){
+                    new Com.Glossary({'node' : node});
+                })
                 .construct();
-            // Glossary
-            Com.GlossaryCollector();
         });
     </script>
 </head>
@@ -131,9 +132,9 @@
             </ul>
             <ul class="group is-adaptive">
                 <li>
-                    <span class="com-glossary-word" data-com-glossary="true">
-                        <span class="com-glossary-title">Glossary</span>
-                        <span class="com-glossary-popup">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo eros, sagittis id elit ut, congue tristique erat. Fusce purus nibh, consectetur eu est consectetur, varius sollicitudin metus. Proin eget malesuada velit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span>
+                    <span class="com__glossary" data-element="glossary" data-node="ComGlossary:{}:container">
+                        <span class="com__glossary__title" data-node="title">Glossary</span>
+                        <span class="com__glossary__content" data-node="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo eros, sagittis id elit ut, congue tristique erat. Fusce purus nibh, consectetur eu est consectetur, varius sollicitudin metus. Proin eget malesuada velit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span>
                     </span>
                 </li>
             </ul>
