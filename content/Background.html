@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Фон</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+
+    <script type="text/javascript" src="../libs/application/js/Application.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .addEvent('onConstruct', function(collector, data){
+                    Part.Menu();
+                    Part.Autoresize(data['node']);
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="pt__box-title">Фон</h1>
+<hr>
+
+<p>В QuickSilk CMS имеется возможность редактировать фон шаблона с админки:</p>
+<div class="pt__image is-adaptive is-no-hover">
+    <div class="inner">
+        <img class="descr" src="../img/template-editor-background.png" alt="">
+    </div>
+</div>
+<p>Стили по-умолчанию берутся из less переменных, файл которых находится по адресу <code>less/variables.less</code> в папке шаблона. Стили фона следует в первую очередь задавать через less переменные описанные ниже. Если нужно задать правило, которое не описывается в less переменных, то его стоит добавить в файл <code>less/main.less</code>. Перед добавлением таких правил подумай дважды, они могут конфликтовать со стилями, которые пользователь редактирует через админку.</p>
+
+<hr>
+
+<p>Список less переменных стилей фона шаблона:</p>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppTpl-Container-BackgroundColor: #ffffff;
+@AppTpl-Container-BackgroundImage: none;
+@AppTpl-Container-BackgroundPosition: center center;
+@AppTpl-Container-BackgroundSize: auto;
+@AppTpl-Container-BackgroundRepeat: repeat;
+@AppTpl-Container-BackgroundParallax: scroll;</textarea>
+
+<p>Переменная <code>@AppTpl-Container-BackgroundParallax</code> описывает css атрибут <code>background-attachment</code>, может иметь значение <code>fixed</code> или <code>scroll</code>.</p>
+
+</body>
+
+</html>

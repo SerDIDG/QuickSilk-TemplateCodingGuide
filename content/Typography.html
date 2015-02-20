@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Typography - Quicksilk CMS Design Sheets</title>
+    <title>Типография</title>
 
     <link type="text/css" rel="stylesheet" href="../css/index.css">
 
@@ -14,11 +14,8 @@
     <script type="text/javascript" src="../libs/common/js/init.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
     <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
-    <script type="text/javascript" src="../libs/common/js/components/Tooltip.js"></script>
-    <script type="text/javascript" src="../libs/common/js/components/Glossary.js"></script>
 
     <script type="text/javascript" src="../libs/application/js/Application.js"></script>
-    <script type="text/javascript" src="../libs/application/js/components/ModuleMenu.js"></script>
 
     <script type="text/javascript">
         cm.onReady(function(){
@@ -28,14 +25,6 @@
                     Part.Menu();
                     Part.Autoresize(data['node']);
                 })
-                .add('module-menu', function(node){
-                    new App.ModuleMenu({
-                        'node' : node
-                    });
-                })
-                .add('glossary', function(node){
-                    new Com.Glossary({'node' : node});
-                })
                 .construct();
         });
     </script>
@@ -43,67 +32,109 @@
 
 <body>
 
-<h1 class="app-page-title">Typography</h1>
+<h1 class="pt__box-title">Типография</h1>
 <hr>
 
-<div class="cm-box-content">
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+<p>В QuickSilk CMS имеется возможность редактировать стили шрифтов шаблона с админки:</p>
+<div class="pt__image is-adaptive is-no-hover">
+    <div class="inner">
+        <img class="descr" src="../img/template-editor-font.png" alt="">
+    </div>
 </div>
+<p>Стили по-умолчанию берутся из less переменных, файл которых находится по адресу <code>less/variables.less</code> в папке шаблона. Стили шрифтов следует в первую очередь задавать через less переменные описанные ниже. Если нужно задать правило, которое не описывается в less переменных, например <code>text-transform</code>, то его стоит добавить в файл <code>less/main.less</code>. Перед добавлением таких правил подумай дважды, они могут повлиять на общий стиль всех других элементов.</p>
 
-<div class="cm-box-content">
-    <h2>Links</h2>
-    <p>
-        <a>Default Link</a>
-    </p>
-    <p>
-        <span class="com__glossary" data-element="glossary" data-node="ComGlossary:{}:container">
-            <span class="com__glossary__title" data-node="title">Glossary</span>
-            <span class="com__glossary__content" data-node="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo eros, sagittis id elit ut, congue tristique erat. Fusce purus nibh, consectetur eu est consectetur, varius sollicitudin metus. Proin eget malesuada velit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span>
-        </span>
-    </p>
-</div>
+<hr>
 
-<div class="cm-box-content">
-    <h2>Paragraph</h2>
-    <p>Canada is a country in North America consisting of ten provinces and three territories. Located in the northern part of the continent, it extends from the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million square kilometres in total, Canada is the world's second-largest country by total area and the fourth-largest country by land area. Its common border with the United States is the world's longest land border shared by the same two countries.</p>
-    <p>The land that is now Canada has been inhabited for millennia by various Aboriginal peoples. Beginning in the late 15th century, British and French colonies were established on the region's Atlantic coast. As a consequence of various conflicts, the United Kingdom gained and lost North American territories until left, in the late 18th century, with what mostly comprises Canada today. Pursuant to the British North America Act, on July 1, 1867 three colonies joined to form the autonomous federal dominion of Canada. This began an accretion of provinces and territories to the new self-governing dominion. In 1931, Britain granted Canada full independence in most matters with the Statute of Westminster 1931. The Canada Act 1982 severed the vestiges of legal dependence on the British parliament.</p>
-    <p>Canada is a federal parliamentary democracy and a constitutional monarchy, with Queen Elizabeth II as its head of state. Canada is a member of the Commonwealth of Nations. The country is officially bilingual at the federal level. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries, with a population of approximately 35 million as of December 2012. Its advanced economy is one of the largest in the world, relying chiefly upon its abundant natural resources and well-developed trade networks. Canada's long and complex relationship with the United States has had a significant impact on its economy and culture.</p>
-</div>
+<p>Paragraph Paragraph<br>Paragraph Paragraph<br>Paragraph Paragraph</p>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-P-Family: Open Sans, sans-serif;
+@AppFont-P-LineHeight: 24px;
+@AppFont-P-Size: 15px;
+@AppFont-P-Weight: 300;
+@AppFont-P-Color: #3a3a3a;
+@AppFont-P-Decoration: none;
+@AppFont-P-Style: normal;</textarea>
 
-<div class="cm-box-content">
-    <h2>List</h2>
-    <ul>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dapibus ex, sit amet consequat neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet quam in neque suscipit consequat. </li>
-        <li>Nulla congue dui nec enim tincidunt, non egestas arcu viverra. Nunc laoreet, sem quis viverra lobortis, risus magna efficitur arcu, non gravida nibh turpis sed nibh.</li>
-        <li>Donec venenatis volutpat mauris, in sodales justo tristique at. Donec in pulvinar erat, sit amet sollicitudin erat. Pellentesque a vehicula dui, in pretium diam. Etiam lacinia pharetra ex non tincidunt. Mauris id ornare lacus. Donec gravida augue magna, sit amet semper massa consequat ac. In odio ligula, suscipit sed purus id, pulvinar ultricies odio.</li>
-    </ul>
-</div>
+<hr>
 
-<div class="cm-box-content">
-    <h2>Numeric List</h2>
-    <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget dapibus ex, sit amet consequat neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sit amet quam in neque suscipit consequat. </li>
-        <li>Nulla congue dui nec enim tincidunt, non egestas arcu viverra. Nunc laoreet, sem quis viverra lobortis, risus magna efficitur arcu, non gravida nibh turpis sed nibh.</li>
-        <li>Donec venenatis volutpat mauris, in sodales justo tristique at. Donec in pulvinar erat, sit amet sollicitudin erat. Pellentesque a vehicula dui, in pretium diam. Etiam lacinia pharetra ex non tincidunt. Mauris id ornare lacus. Donec gravida augue magna, sit amet semper massa consequat ac. In odio ligula, suscipit sed purus id, pulvinar ultricies odio.</li>
-    </ol>
-</div>
+<h1>Heading 1</h1>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-H1-Family: Roboto, sans-serif;
+@AppFont-H1-LineHeight: 60px;
+@AppFont-H1-Size: 50px;
+@AppFont-H1-Weight: 300;
+@AppFont-H1-Color: #0f2a4c;
+@AppFont-H1-Decoration: none;
+@AppFont-H1-Style: normal;</textarea>
 
-<div class="cm-box-content">
-    <h2>Description List</h2>
-    <dl>
-        <dt>Canada</dt>
-        <dd>Canada is a country in North America consisting of ten provinces and three territories. Located in the northern part of the continent, it extends from the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million square kilometres in total, Canada is the world's second-largest country by total area and the fourth-largest country by land area. Its common border with the United States is the world's longest land border shared by the same two countries.</dd>
-    </dl>
-    <dl>
-        <dt>United States</dt>
-        <dd>The United States of America (USA or U.S.A.), commonly referred to as the United States (US or U.S.), America, and sometimes the States, is a federal republic consisting of 50 states and a federal district. The 48 contiguous states and Washington, D.C., are in central North America between Canada and Mexico. The state of Alaska is the northwestern part of North America and the state of Hawaii is an archipelago in the mid-Pacific. The country also has five populated and nine unpopulated territories in the Pacific and the Caribbean. At 3.71 million square miles (9.62 million km2) and with around 318 million people, the United States is the world's 3rd or 4th-largest country by total area and third-largest by population. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries.[18] The geography and climate of the United States is also extremely diverse, and it is home to a wide variety of wildlife.</dd>
-    </dl>
-</div>
+<hr>
+
+<h2>Heading 2</h2>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-H2-Family: Roboto, sans-serif;
+@AppFont-H2-LineHeight: 40px;
+@AppFont-H2-Size: 30px;
+@AppFont-H2-Weight: 300;
+@AppFont-H2-Color: #51585b;
+@AppFont-H2-Decoration: none;
+@AppFont-H2-Style: normal;</textarea>
+
+<hr>
+
+<h3>Heading 3</h3>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-H3-Family: Roboto, sans-serif;
+@AppFont-H3-LineHeight: 32px;
+@AppFont-H3-Size: 26px;
+@AppFont-H3-Weight: 100;
+@AppFont-H3-Color: #0f2a4c;
+@AppFont-H3-Decoration: none;
+@AppFont-H3-Style: normal;</textarea>
+
+<hr>
+
+<h4>Heading 4</h4>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-H4-Family: Roboto, sans-serif;
+@AppFont-H4-LineHeight: 28px;
+@AppFont-H4-Size: 22px;
+@AppFont-H4-Weight: 400;
+@AppFont-H4-Color: #0f2a4c;
+@AppFont-H4-Decoration: none;
+@AppFont-H4-Style: normal;</textarea>
+
+<hr>
+
+<h5>Heading 5</h5>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-H5-Family: Roboto, sans-serif;
+@AppFont-H5-LineHeight: 24px;
+@AppFont-H5-Size: 18px;
+@AppFont-H5-Weight: 300;
+@AppFont-H5-Color: #202020;
+@AppFont-H5-Decoration: none;
+@AppFont-H5-Style: normal;</textarea>
+
+<hr>
+
+<h6>Heading 6</h6>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-H6-Family: Roboto, sans-serif;
+@AppFont-H6-LineHeight: 24px;
+@AppFont-H6-Size: 16px;
+@AppFont-H6-Weight: 300;
+@AppFont-H6-Color: #202020;
+@AppFont-H6-Decoration: none;
+@AppFont-H6-Style: normal;</textarea>
+
+<hr>
+
+<p><a>Link</a></p>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@AppFont-A-Weight: 300;
+@AppFont-A-Color: #7a7b7c;
+@AppFont-A-Decoration: underline;
+@AppFont-A-Style: normal;</textarea>
 
 </body>
 

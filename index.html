@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Quicksilk CMS Design Sheets</title>
+    <title>QuickSilk - Template Coding Guide</title>
 
     <link type="text/css" rel="stylesheet" href="css/index.css">
 
@@ -36,50 +36,35 @@
 
 <body>
 
-<div class="com-collapsible-layout" data-element="sidebar" data-config='{"remember" : true, "name" : "sheets-sidebar"}'>
+<div class="lt__collapsible" data-element="sidebar" data-config='{"remember" : true, "name" : "sidebar"}'>
     <div class="sidebar left" data-node="ComCollapsibleLayout.leftContainer">
         <div class="inner">
             <div class="title">
                 <span class="icon medium linked arrow-left" data-node="ComCollapsibleLayout.leftButton"></span>
-                Design Sheets
+                Разделы
             </div>
             <div class="descr">
-                <dl class="com-togglebox is-show">
+                <dl class="com__togglebox is-show" data-element="togglebox" data-config='{"remember" : true, "name" : "sidebar-general"}'>
+                    <dt data-node="ComToggleBox.button">
+                        <span class="icon default"></span>
+                        Шаблон
+                    </dt>
                     <dd data-node="ComToggleBox.target">
-                        <div class="cm-items-list auto">
+                        <div class="pt__listing-items auto">
                             <ul>
                                 <li>
-                                    <a href="content/Index.html" target="content">Index</a>
+                                    <a href="content/Structure.html" target="content">Структура</a>
                                 </li>
                                 <li>
-                                    <a href="content/Typography.html" target="content">Typography</a>
+                                    <a href="content/Background.html" target="content">Фон</a>
                                 </li>
                                 <li>
-                                    <a href="content/Form.html" target="content">Form Elements</a>
-                                </li>
-                                <li>
-                                    <a href="content/Breadcrumbs.html" target="content">Breadcrumbs</a>
-                                </li>
-                                <li>
-                                    <a href="content/Menu.html" target="content">Menu</a>
-                                </li>
-                                <li>
-                                    <a href="content/Search.html" target="content">Search</a>
-                                </li>
-                                <li>
-                                    <a href="content/Social.html" target="content">Social and Share</a>
-                                </li>
-                                <li>
-                                    <a href="content/Slider.html" target="content">Slider</a>
-                                </li>
-                                <li>
-                                    <a href="content/Tabs.html" target="content">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="content/Tags.html" target="content">Tags</a>
-                                </li>
-                                <li>
-                                    <a href="content/Toggleboxes.html" target="content">Toggleboxes</a>
+                                    <a href="content/Typography.html" target="content">Типография</a>
+                                    <ul class="pt__listing-items">
+                                        <li>
+                                            <a href="content/Typography-Extended.html" target="content">Дополнительно</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>

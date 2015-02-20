@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Стуктура</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/ToggleBox.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/SimpleToggleBox.js"></script>
+
+    <script type="text/javascript" src="../libs/application/js/Application.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .addEvent('onConstruct', function(collector, data){
+                    Part.Menu();
+                    Part.Autoresize(data['node']);
+                })
+                .add('simple-togglebox', function(node){
+                    new Com.SimpleToggleBox({'node' : node});
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="pt__box-title">Структура</h1>
+<hr>
+
+<div class="pt__box-content">
+    <h2>HTML структура шаблона</h2>
+    <textarea class="cm-codebox cm-autoresize" readonly data-element="simple-togglebox">
+<div class="tpl__container" data-node="AppTemplate.container" data-element="template">
+
+    <!-- [* ******* HEADER START ******* *] -->
+
+    <div class="tpl__header" data-node="AppTemplate.header">
+        <div class="tpl__header__inner">
+            <?php echo $this->Dropzone('header-main', 0, "app__area-header main"); ?>
+        </div>
+    </div>
+
+    <!-- [* ******* HEADER END ******* *] -->
+
+    <!-- [* ******* CONTENT START ******* *] -->
+
+    <div class="tpl__content" data-node="AppTemplate.content">
+        <div class="tpl__content__inner">
+            <?php echo $this->Dropzone('content', 0, "app__area-main"); ?>
+        </div>
+    </div>
+
+    <!-- [* ******* CONTENT END ******* *] -->
+
+    <!-- [* ******* FOOTER START ******* *] -->
+
+    <div class="tpl__footer" data-node="AppTemplate.footer">
+        <div class="tpl__footer__inner">
+            <?php echo $this->Dropzone('header-main', 0, "app__area-footer main"); ?>
+        </div>
+    </div>
+
+    <!-- [* ******* FOOTER END ******* *] -->
+    
+</div></textarea>
+</div>
+
+<div class="pt__box-content">
+    <h2>Админка</h2>
+    <p>В QuickSilk CMS имеется возможность редактировать некоторые параметры структуры шаблона с админки:</p>
+    <div class="pt__image is-adaptive is-no-hover">
+        <div class="inner">
+            <img class="descr" src="../img/template-editor-properties.png" alt="">
+        </div>
+    </div>
+    <p>Стили по-умолчанию берутся из less переменных, файл которых находится по адресу <code>less/variables.less</code> в папке шаблона. Стили структуры следует в первую очередь задавать через less переменные описанные ниже. Если нужно задать правило, которое не описывается в less переменных, то его стоит добавить в файл <code>less/main.less</code>.</p>
+</div>
+
+<div class="pt__box-content">
+    <h2>Список less переменных стилей структуры шаблона</h2>
+    <textarea class="cm-codebox cm-autoresize" readonly>
+@AppTpl-Container-Size: wide;
+@AppTpl-Container-Width: 1170px;
+@AppTpl-Container-Align: center;
+
+@AppTpl-Header-Size: box;
+@AppTpl-Header-Width: 1170px;
+@AppTpl-Header-Align: center;
+
+@AppTpl-Footer-Size: box;
+@AppTpl-Footer-Width: 1170px;
+@AppTpl-Footer-Align: center;</textarea>
+
+    <ul>
+        <li><code>@AppTpl-Container-Size</code> - определяет, будет ли шаблон занимать всё пространство по ширине экрана - <code>wide</code>, либо только указанное - <code>box</code>. Если выбран <code>box</code>, <code>header</code> и <code>footer</code> будут наследовать ширину и выравнивание от <code>container</code>.</li>
+        <li><code>@AppTpl-Container-Width</code> - задаёт ширину шаблона, если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>.</li>
+        <li><code>@AppTpl-Container-Align</code> - задаёт выравнивание шаблона, если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>.</li>
+    </ul>
+    <ul>
+        <li><code>@AppTpl-Header-Size</code> - определяет, будет ли <code>header</code> шаблона занимать всё пространство по ширине - <code>wide</code>, либо только указанное - <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, данный параметр будет игнорироваться.</li>
+        <li><code>@AppTpl-Header-Width</code> - задаёт ширину <code>header</code>, если переменной <code>@AppTpl-Header-Size</code> задан <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, ширина будет наследоваться от <code>container</code>.</li>
+        <li><code>@AppTpl-Header-Align</code> - задаёт выравнивание <code>header</code>, если переменной <code>@AppTpl-Header-Size</code> задан <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, выравнивание будет наследоваться от <code>container</code>.</li>
+    </ul>
+    <ul>
+        <li><code>@AppTpl-Footer-Size</code> - определяет, будет ли <code>footer</code> шаблона занимать всё пространство по ширине - <code>wide</code>, либо только указанное - <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, данный параметр будет игнорироваться.</li>
+        <li><code>@AppTpl-Footer-Width</code> - задаёт ширину <code>footer</code>, если переменной <code>@AppTpl-Footer-Size</code> задан <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, ширина будет наследоваться от <code>container</code>.</li>
+        <li><code>@AppTpl-Footer-Align</code> - задаёт выравнивание <code>footer</code>, если переменной <code>@AppTpl-Footer-Size</code> задан <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, выравнивание будет наследоваться от <code>container</code>.</li>
+    </ul>
+</div>
+
+</body>
+
+</html>

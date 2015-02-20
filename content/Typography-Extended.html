@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Типография - Дополнительно</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+
+    <script type="text/javascript" src="../libs/application/js/Application.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .addEvent('onConstruct', function(collector, data){
+                    Part.Menu();
+                    Part.Autoresize(data['node']);
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="pt__box-title">Типография - Дополнительно</h1>
+<hr>
+
+<p>Для стилизации стилей шрифтов разных элементов существуют расширенные less переменные. Их файлы можно найти по адресу <code>libs/common/less/variables.less</code> и <code>libs/application/less/variables.less</code>. Ниже представлены основные less переменные отвечающие за стилизации шрифтов.</p>
+
+<textarea class="cm-codebox cm-autoresize" readonly>
+// /* ******* ЦВЕТ ******* */
+
+@CmColor-Font: #666666;
+@CmColor-Font-Opposite: #ffffff;
+@CmColor-Font-Hint: #999999;
+@CmColor-Font-Placeholder: #b7b7b7;
+@CmColor-Font-Link: @CmColor-Primary-DarkDefault;
+@CmColor-Font-LinkHover: @CmColor-Primary-DarkHover;
+@CmColor-Font-LinkActive: @CmColor-Primary-DarkActive;
+
+// /* ******* СТИЛИ ******* */
+
+@CmFont-Base-LightWeight: 300;
+@CmFont-Base-NormalWeight: 400;
+@CmFont-Base-BoldWeight: 600;
+
+@CmFont-Base-LineHeight: 18px;
+@CmFont-Base-LineHeightSmall: 18px;
+@CmFont-Base-Family: 'Open Sans', arial, helvetica, sans-serif;
+@CmFont-Base-Size: 13px;
+@CmFont-Base-SizeSmall: 11px;
+@CmFont-Base-Weight: @CmFont-Base-NormalWeight;
+@CmFont-Base-Color: @CmColor-Font;
+@CmFont-Base-ColorOpposite: @CmColor-Font-Opposite;
+
+@CmFont-Base-Hint-Size: 11px;
+@CmFont-Base-Hint-Color: @CmColor-Font-Hint;</textarea>
+
+<hr>
+
+<p>Переменные из common, описанные ниже, переопределяются переменными из типографии в файле <code>libs/application/less/variables.less</code>:</p>
+<textarea class="cm-codebox cm-autoresize" readonly>
+@CmColor-Font: @AppFont-P-Color;
+@CmColor-Font-Link: @AppFont-A-Color;
+
+@CmFont-Base-Family: @AppFont-P-Family;
+@CmFont-Base-LineHeight: @AppFont-P-LineHeight;
+@CmFont-Base-Size: @AppFont-P-Size;
+@CmFont-Base-Weight: @AppFont-P-Weight;</textarea>
+
+</body>
+
+</html>
