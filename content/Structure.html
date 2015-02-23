@@ -42,7 +42,9 @@
 <hr>
 
 <div class="pt__box-content">
-    <h2>HTML структура шаблона</h2>
+    <h2>Структура шаблона</h2>
+    <p>Шаблон для QuickSilk CMS делится на три блока: <code>header</code>, <code>content</code> и <code>footer</code>. Каждый блок как минимум должен состоять из двух элементов - внешнего и внутреннего. Эти два элемента обязательны - на них навешаны специальные классы, например, для блока <code>header</code> это элементы с классами: внешний - <code>tpl__header</code>, внутренний - <code>tpl__header__inner</code>. Название классов обязательны - к ним привязываются стили, назначенные пользователем из админки. Внутренняя структура каждого блока может отличаться от эталонной, так же внутренний элемент может быть в другом месте по иерархии.</p>
+    <p>Ниже представлен пример структуры пустого шаблона.</p>
     <textarea class="cm-codebox cm-autoresize" readonly data-element="simple-togglebox">
 <div class="tpl__container" data-node="AppTemplate.container" data-element="template">
 
@@ -70,7 +72,7 @@
 
     <div class="tpl__footer" data-node="AppTemplate.footer">
         <div class="tpl__footer__inner">
-            <?php echo $this->Dropzone('header-main', 0, "app__area-footer main"); ?>
+            <?php echo $this->Dropzone('footer-main', 0, "app__area-footer main"); ?>
         </div>
     </div>
 
@@ -91,7 +93,7 @@
 </div>
 
 <div class="pt__box-content">
-    <h2>Список less переменных стилей структуры шаблона</h2>
+    <h2>Less переменные</h2>
     <textarea class="cm-codebox cm-autoresize" readonly>
 @AppTpl-Container-Size: wide;
 @AppTpl-Container-Width: 1170px;
@@ -120,6 +122,111 @@
         <li><code>@AppTpl-Footer-Width</code> - задаёт ширину <code>footer</code>, если переменной <code>@AppTpl-Footer-Size</code> задан <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, ширина будет наследоваться от <code>container</code>.</li>
         <li><code>@AppTpl-Footer-Align</code> - задаёт выравнивание <code>footer</code>, если переменной <code>@AppTpl-Footer-Size</code> задан <code>box</code>. Если переменной <code>@AppTpl-Container-Size</code> задан <code>box</code>, выравнивание будет наследоваться от <code>container</code>.</li>
     </ul>
+</div>
+
+<div class="pt__box-content">
+    <h2>Управляющий mixin</h2>
+    <p>Для понимая как именно less переменные влияют на структуру шаблона, ниже представлен управляющий less mixin. Он подойдёт для большинства случаев, но при необходимости его можно переопределить в файле <code>less/main.less</code> шаблона. Mixin применяется автоматически, <u>нет необходимости</u> копировать его в файл <code>less/main.less</code> шаблона.</p>
+    <textarea class="cm-codebox cm-autoresize" readonly data-element="simple-togglebox">
+.tpl__header__size (@value) when (@value = wide) {
+    .tpl__header {
+        padding: @AppTpl-Block-Padding;
+    }
+}
+
+.tpl__header__size (@value) when (@value = box) {
+    .tpl__header {
+        padding: @AppTpl-Block-Padding;
+    }
+
+    .tpl__header__inner {
+        max-width: @AppTpl-Header-Width;
+        .mx__align(@AppTpl-Header-Align);
+    }
+}
+
+.tpl__footer__size (@value) when (@value = wide) {
+    .tpl__footer {
+        padding: @AppTpl-Block-Padding;
+    }
+}
+
+.tpl__footer__size (@value) when (@value = box) {
+    .tpl__header {
+        padding: @AppTpl-Block-Padding;
+    }
+
+    .tpl__footer__inner {
+        max-width: @AppTpl-Footer-Width;
+        .mx__align(@AppTpl-Footer-Align);
+    }
+}
+
+.tpl__container__size (@value) when (@value = wide) {
+    .tpl__header__size(@AppTpl-Header-Size);
+    .tpl__footer__size(@AppTpl-Footer-Size);
+}
+
+.tpl__container__size (@value) when (@value = box) {
+    .tpl__header,
+    .tpl__footer,
+    .tpl__content {
+        padding: @AppTpl-Block-Padding;
+    }
+
+    .tpl__header__inner,
+    .tpl__content__inner,
+    .tpl__footer__inner {
+        max-width: @AppTpl-Container-Width;
+        .mx__align(@AppTpl-Container-Align);
+    }
+}
+
+.tpl__container__size(@AppTpl-Container-Size);</textarea>
+</div>
+
+<div class="pt__box-content">
+    <h2>Drop зоны</h2>
+    <p>Drop зоны нужны для того, чтобы определить, где могут вставляться модули. Каждой зоне соответствует своё уникальное название и класс, что упрощает отладку кода и способствует переносу пользовательского контента с одного шаблона в другой. Блок <code>content</code> имеет всего одну drop зону, когда как блоки <code>header</code> и <code>footer</code> могут содержать как одну стандартную так и любое количество специфических.</p>
+    <p>Стандартные зоны и зона <code>content</code> занимают всё пространство по ширине страницы тогда как специфические абсолютно позиционированные в определённом месте блока. По надобности можно переопределять позиционирование специфических drop зон.</p>
+    <p>Ниже представлен список стандартных и специфических drop зон.</p>
+    <h3>Header</h3>
+    <ul class="cm__list">
+        <li><code>main</code> - стандартная универсальная зона;</li>
+        <li><code>logo</code> - лого сайта. Module Site Logo;</li>
+        <li><code>info</code> - контактная информация, адрес, номер, итд. Module Content;</li>
+        <li><code>icons</code> - социальные иконки. Module Social Media;</li>
+        <li><code>logo</code> - ссылка на логин. Module Login;</li>
+        <li><code>links</code> - второстепенное меню. Module Menu;</li>
+        <li><code>menu</code> - главное навигационное меню. Module Menu;</li>
+        <li><code>search</code> - поле поиска по сайту. Module Search;</li>
+        <li><code>langs</code> - ссылки смены языка. Module Language Switcher;</li>
+        <li><code>splash</code> - зона для splash изображения, которое обычно идёт перед шапкой сайта.</li>
+    </ul>
+
+    <p>Для блока <code>header</code> названия зон указываются с префиксом <code>header-</code>. Например зону с названием <code>logo</code> следует вставлять в таком виде:</p>
+    <textarea class="cm-codebox cm-autoresize" readonly><?php echo $this->Dropzone('header-logo', 0, "app__area-header logo"); ?></textarea>
+
+    <h3>Content</h3>
+    <ul class="cm__list">
+        <li><code>content</code> - основная зона для контента страницы.</li>
+    </ul>
+
+    <p>Зону контента следует вставлять в таком виде:</p>
+    <textarea class="cm-codebox cm-autoresize" readonly><?php echo $this->Dropzone('content', 0, "app__area-main"); ?></textarea>
+
+    <h3>Footer</h3>
+    <ul class="cm__list">
+        <li><code>main</code> - стандартная универсальная зона;</li>
+        <li><code>copyright</code> - зона для копирайтов, прочей авторской информации. Module Content;</li>
+        <li><code>icons</code> - социальные иконки. Module Social Media;</li>
+        <li><code>links</code> - второстепенное меню. Module Menu;</li>
+        <li><code>sitemap</code> - карта сайта. Module Menu;</li>
+        <li><code>powered</code> - зона для копирайта QuickSilk CMS. Module Content.</li>
+    </ul>
+
+    <p>Для блока <code>footer</code> названия зон указываются с префиксом <code>footer-</code>. Например зону с названием <code>main</code> следует вставлять в таком виде:</p>
+    <textarea class="cm-codebox cm-autoresize" readonly><?php echo $this->Dropzone('footer-main', 0, "app__area-footer main"); ?></textarea>
 </div>
 
 </body>
