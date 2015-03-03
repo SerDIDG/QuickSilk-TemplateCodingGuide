@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive is-guide">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>С чего начать?</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+
+    <script type="text/javascript" src="../libs/application/js/Application.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .addEvent('onConstruct', function(collector, data){
+                    Part.Menu();
+                    Part.Autoresize(data['node']);
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="pt__box-title">С чего начать?</h1>
+<hr>
+
+<p>Разработка темплейтов для QuickSilk CMS осуществляется на специальном локальном сервере: <a href="http://192.168.20.101/" target="_blank">http://192.168.20.101/</a>. На данный момент он доступен только во внутриофисной сети.</p>
+
+<h2>Детали сервера</h2>
+<h3>Авторизация на сайте</h3>
+<ul>
+    <li><code>URL</code>: <a href="http://192.168.20.101/user/login" target="_blank">http://192.168.20.101/user/login</a></li>
+    <li><code>Email</code>: webcodeeditor@sohoportal.com</li>
+    <li><code>Password</code>: Codemaker123!!</li>
+</ul>
+<div class="pt__image is-adaptive is-no-hover">
+    <div class="inner">
+        <img class="descr" src="../img/quicksilk-login.png" alt="">
+    </div>
+</div>
+<h3>Данные FTP</h3>
+<ul>
+    <li><code>Host</code>: 192.168.20.101</li>
+    <li><code>User</code>: webcodeeditor</li>
+    <li><code>Password</code>: codemaker123!!</li>
+</ul>
+
+<h2>Подготовка среды</h2>
+<p>Под каждый новый шаблон следует создавать Microsite - под сайт со своим выбранным шаблоном, разметкой (layout) и контентом.</p>
+
+</body>
+
+</html>
