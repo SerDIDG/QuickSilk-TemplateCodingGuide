@@ -36,6 +36,13 @@
 <hr>
 
 <p>Разработка темплейтов для QuickSilk CMS осуществляется на специальном локальном сервере: <a href="http://192.168.20.101/" target="_blank">http://192.168.20.101/</a>. На данный момент он доступен только во внутриофисной сети.</p>
+<p>Для удобства начальную стадию можно проводить и у себя на локальной машине. Вёрстку структуры, стилизацию типографии, контента и стандартных view модулей можно делать на базе пустого шаблона. Скачать его можно <a href="https://www.dropbox.com/s/f51jtm26rvjwiod/QuickSilk%20-%2000001%20-%20Coding%20Exampe.zip?dl=0" target="_blank">здесь</a>. В состав пустого шаблона входят две библиотеки UI в которых есть все стили CMS и её модулей. Примеры некоторые элементов и модулей можно найти в документах шаблона.</p>
+<ul>
+    <li><code>Постоянная ссылка на пустой шаблон</code> - <a href="https://www.dropbox.com/s/f51jtm26rvjwiod/QuickSilk%20-%2000001%20-%20Coding%20Exampe.zip?dl=0" target="_blank">https://www.dropbox.com/s/f51jtm26rvjwiod/QuickSilk%20-%2000001%20-%20Coding%20Exampe.zip?dl=0</a></li>
+    <li><code>docs/common.html</code> - примеры элементов UI.</li>
+    <li><code>docs/application.html</code> - примеры модулей и блоков CMS.</li>
+    <li><code>layout.html</code> - пример структуры шаблона (серверный шаблон содержит ещё и специальные вставки кода).</li>
+</ul>
 
 <h2>Детали сервера</h2>
 <h3>Авторизация на сайте</h3>
@@ -56,8 +63,21 @@
     <li><code>Password</code>: codemaker123!!</li>
 </ul>
 
+<h2>Шаблоны</h2>
+<p>У каждого шаблона есть свой уникальный ID. Список соответствий можно посмотреть <a href="https://docs.google.com/spreadsheets/d/1afVY4FiRX1N3l-PKw-VGow1ckFZNpLf4A_rRgkQ-hIw/edit?usp=sharing" target="_blank">здесь</a>. PSD файлы шаблонов хранятся на локальном share сервере.</p>
+<ul>
+    <li><code>Репозиторий дизайнов шаблонов</code> - 192.168.20.150/Templates</li>
+    <li><code>Таблица шаблонов</code> - <a href="https://docs.google.com/spreadsheets/d/1afVY4FiRX1N3l-PKw-VGow1ckFZNpLf4A_rRgkQ-hIw/edit?usp=sharing" target="_blank">https://docs.google.com/spreadsheets/d/1afVY4FiRX1N3l-PKw-VGow1ckFZNpLf4A_rRgkQ-hIw/edit?usp=sharing</a></li>
+</ul>
+
 <h2>Подготовка среды</h2>
-<p>Под каждый новый шаблон следует создавать Microsite - под сайт со своим выбранным шаблоном, разметкой (layout) и контентом.</p>
+<p>Под каждый новый шаблон следует создавать Microsite - под сайт со своим выбранным шаблоном, разметкой (layout) и контентом. Администраторский раздел модуля Microsite находится <a href="http://192.168.20.101/admin/microsite" target="_blank">здесь</a>.</p>
+<p>Форму создания Microsite следует заполнять по шаблону ниже. Имя шаблона и ID следует брать из <a a href="https://docs.google.com/spreadsheets/d/1afVY4FiRX1N3l-PKw-VGow1ckFZNpLf4A_rRgkQ-hIw/edit?usp=sharing" target="_blank">таблицы шаблонов</a>.</p>
+<div class="pt__image is-adaptive is-no-hover">
+    <div class="inner">
+        <img class="descr" src="../img/quicksilk-microsite.png" alt="">
+    </div>
+</div>
 
 </body>
 
