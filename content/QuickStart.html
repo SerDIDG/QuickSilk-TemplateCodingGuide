@@ -71,11 +71,20 @@
 </ul>
 
 <h2>Подготовка среды</h2>
-<p>Под каждый новый шаблон следует создавать Microsite - под сайт со своим выбранным шаблоном, разметкой (layout) и контентом. Администраторский раздел модуля Microsite находится <a href="http://192.168.20.101/admin/microsite" target="_blank">здесь</a>.</p>
-<p>Форму создания Microsite следует заполнять по шаблону ниже. Имя шаблона и ID следует брать из <a a href="https://docs.google.com/spreadsheets/d/1afVY4FiRX1N3l-PKw-VGow1ckFZNpLf4A_rRgkQ-hIw/edit?usp=sharing" target="_blank">таблицы шаблонов</a>.</p>
+<p>Под каждый новый шаблон следует создавать Microsite - под сайт со своим выбранным шаблоном, разметкой (layout) и контентом. Администраторский раздел модуля Microsite находится <a href="http://192.168.20.101/admin/microsite" target="_blank">здесь</a> (Modules > Microsites). Форму создания Microsite следует заполнять по шаблону ниже. Имя шаблона и ID следует брать из <a a href="https://docs.google.com/spreadsheets/d/1afVY4FiRX1N3l-PKw-VGow1ckFZNpLf4A_rRgkQ-hIw/edit?usp=sharing" target="_blank">таблицы шаблонов</a>. В поле <code>Template</code> следует выбрать шаблон на базе которого будет делаться новый. Рекомендуется выбирать <code>Blank template #1</code>.</p>
 <div class="pt__image is-adaptive is-no-hover">
     <div class="inner">
         <img class="descr" src="../img/quicksilk-microsite.png" alt="">
+    </div>
+</div>
+<p>Для того чтобы править файлы шаблона нового микросайта, следует подключиться к FTP серверу и перейти в директорию <code>public/web/ID/templates/Template_ID</code>, где ID - Microsite URL заполненный в форме создания микросайта, Template_ID - ID выбранного шаблона в форме создания микросайта. После того, как будут залиты на сервер новые less файлы шаблон, следует сбросить настройки шаблона с Администраторской панели. Чтобы отчистить настройки шаблона следует пройти авторизацию на микросайте и перейти в Менеджер Шаблонов (Modules > Templates). В списке шаблонов поднести курсор к выбранному при создании микросайта шаблону и нажать Customize. На открывшейся странице в каждой табе нажать кнопку Reset to default settings.</p>
+<ul>
+    <li><code>Авторизация на микросайте</code>: http://192.168.20.101/ID/user/login, где <code>ID</code> - Microsite URL заполненный в форме создания микросайта.</li>
+    <li><code>Менеджер шаблонов</code>: http://192.168.20.101/ID/admin/template-library, где <code>ID</code> - Microsite URL заполненный в форме создания микросайта.</li>
+</ul>
+<div class="pt__image is-adaptive is-no-hover">
+    <div class="inner">
+        <img class="descr" src="../img/quicksilk-templates.png" alt="">
     </div>
 </div>
 
