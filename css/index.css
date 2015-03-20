@@ -9899,8 +9899,8 @@ h6 .com__glossary .com__glossary__title {
   font-size: 0;
   height: 0;
 }
-.app__area-footer:not(.main),
-.app__area-header:not(.main) {
+.app__area-footer:not(.main):not(.splash),
+.app__area-header:not(.main):not(.splash) {
   padding: 0;
 }
 .app__area-footer:hover,
