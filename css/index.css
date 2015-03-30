@@ -2849,6 +2849,7 @@ button::-moz-focus-inner {
   padding: 4px;
   background: #fff;
   border: 1px solid #cccccc;
+  border-width: 1px;
   border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   -moz-box-sizing: border-box;
@@ -3632,6 +3633,7 @@ button::-moz-focus-inner {
   position: absolute;
   margin: 0;
   padding: 4px 0px;
+  border-width: 1px;
   list-style: none;
   opacity: 0;
   top: 100%;
@@ -3671,7 +3673,21 @@ button::-moz-focus-inner {
 }
 .pt__menu-dropdown--base li ul {
   top: -5px;
-  left: 100%;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.pt__menu-dropdown--base li ul.pull-left {
+  top: -5px;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.pt__menu-dropdown--base li ul.pull-right {
+  top: -5px;
+  right: calc(100%);
+  bottom: auto;
+  left: auto;
 }
 .pt__menu-dropdown--base li.sep {
   display: none;
@@ -3708,21 +3724,9 @@ button::-moz-focus-inner {
   bottom: auto;
   left: 0;
 }
-.pt__menu-dropdown--base.pull-left li ul {
-  top: -5px;
-  right: auto;
-  bottom: auto;
-  left: 100%;
-}
 .pt__menu-dropdown--base.pull-right {
   top: 100%;
   right: 0;
-  bottom: auto;
-  left: auto;
-}
-.pt__menu-dropdown--base.pull-right li ul {
-  top: -5px;
-  right: 100%;
   bottom: auto;
   left: auto;
 }
@@ -3992,6 +3996,15 @@ button::-moz-focus-inner {
   padding: 16px;
   position: relative;
 }
+.pt__dnd-area:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  font-size: 0;
+  height: 0;
+}
 .pt__dnd-area.is-available {
   -webkit-transition: background-color 300ms ease-in-out;
   transition: background-color 300ms ease-in-out;
@@ -4146,6 +4159,7 @@ button::-moz-focus-inner {
   position: absolute;
   margin: 0;
   padding: 4px 0px;
+  border-width: 1px;
   list-style: none;
   opacity: 0;
   top: 100%;
@@ -4189,7 +4203,21 @@ button::-moz-focus-inner {
 }
 .pt__editable.is-editable > .menu .pt__menu-dropdown li ul {
   top: -5px;
-  left: 100%;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.pt__editable.is-editable > .menu .pt__menu-dropdown li ul.pull-left {
+  top: -5px;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.pt__editable.is-editable > .menu .pt__menu-dropdown li ul.pull-right {
+  top: -5px;
+  right: calc(100%);
+  bottom: auto;
+  left: auto;
 }
 .pt__editable.is-editable > .menu .pt__menu-dropdown li.sep {
   display: none;
@@ -4226,21 +4254,16 @@ button::-moz-focus-inner {
   bottom: auto;
   left: 0;
 }
-.pt__editable.is-editable > .menu .pt__menu-dropdown.pull-left li ul {
-  top: -5px;
-  right: auto;
-  bottom: auto;
-  left: 100%;
-}
 .pt__editable.is-editable > .menu .pt__menu-dropdown.pull-right {
   top: 100%;
   right: 0;
   bottom: auto;
   left: auto;
 }
-.pt__editable.is-editable > .menu .pt__menu-dropdown.pull-right li ul {
-  top: -5px;
-  right: 100%;
+.pt__editable.is-editable > .menu .pt__menu-dropdown.pull-left,
+.pt__editable.is-editable > .menu .pt__menu-dropdown.pull-right {
+  top: 12px;
+  right: 12px;
   bottom: auto;
   left: auto;
 }
@@ -6115,6 +6138,7 @@ button::-moz-focus-inner {
   padding: 4px;
   background: #fff;
   border: 1px solid #cccccc;
+  border-width: 1px;
   border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   -moz-box-sizing: border-box;
@@ -6280,6 +6304,7 @@ button::-moz-focus-inner {
   position: absolute;
   margin: 0;
   padding: 4px 0px;
+  border-width: 1px;
   list-style: none;
   opacity: 0;
   top: 100%;
@@ -6322,7 +6347,21 @@ button::-moz-focus-inner {
 }
 .com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown li ul {
   top: -5px;
-  left: 100%;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown li ul.pull-left {
+  top: -5px;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown li ul.pull-right {
+  top: -5px;
+  right: calc(100%);
+  bottom: auto;
+  left: auto;
 }
 .com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown li.sep {
   display: none;
@@ -6359,21 +6398,9 @@ button::-moz-focus-inner {
   bottom: auto;
   left: 0;
 }
-.com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown.pull-left li ul {
-  top: -5px;
-  right: auto;
-  bottom: auto;
-  left: 100%;
-}
 .com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown.pull-right {
   top: 100%;
   right: 0;
-  bottom: auto;
-  left: auto;
-}
-.com__tooltip.com-action-menu-tooltip .pt__menu .pt__menu-dropdown.pull-right li ul {
-  top: -5px;
-  right: 100%;
   bottom: auto;
   left: auto;
 }
@@ -7554,6 +7581,9 @@ html.ie9 .com__palette .b-range {
 .com__togglebox > dt ol,
 .com__togglebox > dt hr,
 .com__togglebox > dt .form .hint,
+.com__togglebox > dt .pt__box-item .title,
+.com__togglebox > dt .pt__box-item .descr,
+.com__togglebox > dt .pt__box-item .author,
 .com__togglebox > dt .com__glossary .com__glossary__title,
 .com__togglebox > dt .com__glossary .com__glossary__title {
   color: inherit;
@@ -7890,6 +7920,7 @@ html.ie9 .com__palette .b-range {
   position: absolute;
   margin: 0;
   padding: 4px 0px;
+  border-width: 1px;
   list-style: none;
   opacity: 0;
   top: 100%;
@@ -7931,7 +7962,21 @@ html.ie9 .com__palette .b-range {
 }
 .com__tabset__head-menu .pt__menu-dropdown li ul {
   top: -5px;
-  left: 100%;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.com__tabset__head-menu .pt__menu-dropdown li ul.pull-left {
+  top: -5px;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.com__tabset__head-menu .pt__menu-dropdown li ul.pull-right {
+  top: -5px;
+  right: calc(100%);
+  bottom: auto;
+  left: auto;
 }
 .com__tabset__head-menu .pt__menu-dropdown li.sep {
   display: none;
@@ -7968,21 +8013,9 @@ html.ie9 .com__palette .b-range {
   bottom: auto;
   left: 0;
 }
-.com__tabset__head-menu .pt__menu-dropdown.pull-left li ul {
-  top: -5px;
-  right: auto;
-  bottom: auto;
-  left: 100%;
-}
 .com__tabset__head-menu .pt__menu-dropdown.pull-right {
   top: 100%;
   right: 0;
-  bottom: auto;
-  left: auto;
-}
-.com__tabset__head-menu .pt__menu-dropdown.pull-right li ul {
-  top: -5px;
-  right: 100%;
   bottom: auto;
   left: auto;
 }
@@ -9038,13 +9071,13 @@ html.ie9 .com__palette .b-range {
   z-index: 2;
   overflow: hidden;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  user-select: text;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
 }
 .com__slider > .inner > .slides > ul > li > .text .cm__tags,
 .com__slider > .inner > .slides > ul > li > .text h1,
@@ -9067,6 +9100,9 @@ html.ie9 .com__palette .b-range {
   right: 0;
   bottom: 0;
   left: 0;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
 }
 .com__slider > .inner > .slides > ul > li > .slide-link {
   position: absolute;
@@ -9876,15 +9912,6 @@ h6 .com__glossary .com__glossary__title {
   height: 0;
 }
 /* *** AREAS *** */
-.app__area-main:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  font-size: 0;
-  height: 0;
-}
 .app__area-footer,
 .app__area-header {
   z-index: 1;
@@ -9975,6 +10002,13 @@ html.is-immediately .tpl__container {
   }
   html.is-adaptive.is-sidebar.is-sidebar--collapsed .tpl__container {
     margin-left: 48px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  html.is-adaptive .tpl__header__inner,
+  html.is-adaptive .tpl__content__inner,
+  html.is-adaptive .tpl__footer__inner {
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -10257,6 +10291,7 @@ html.is-immediately .tpl__container {
   position: absolute;
   margin: 0;
   padding: 4px 0px;
+  border-width: 1px;
   list-style: none;
   opacity: 0;
   top: 100%;
@@ -10300,7 +10335,21 @@ html.is-immediately .tpl__container {
 }
 .app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown li ul {
   top: -5px;
-  left: 100%;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown li ul.pull-left {
+  top: -5px;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown li ul.pull-right {
+  top: -5px;
+  right: calc(100%);
+  bottom: auto;
+  left: auto;
 }
 .app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown li.sep {
   display: none;
@@ -10337,21 +10386,16 @@ html.is-immediately .tpl__container {
   bottom: auto;
   left: 0;
 }
-.app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown.pull-left li ul {
-  top: -5px;
-  right: auto;
-  bottom: auto;
-  left: 100%;
-}
 .app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown.pull-right {
   top: 100%;
   right: 0;
   bottom: auto;
   left: auto;
 }
-.app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown.pull-right li ul {
-  top: -5px;
-  right: 100%;
+.app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown.pull-left,
+.app-pt__widget-container > .app-pt__widget.is-editable > .menu .pt__menu-dropdown.pull-right {
+  top: 12px;
+  right: 12px;
   bottom: auto;
   left: auto;
 }
@@ -10720,14 +10764,15 @@ html.is-immediately .tpl__container {
   position: relative;
 }
 .app-lt__topmenu .logo {
-  width: 26px;
-  height: 24px;
+  width: 48px;
+  height: 40px;
   position: relative;
   z-index: 3;
   display: block;
   float: left;
-  margin: 8px 0 0 12px;
   background-image: url("../libs/application/img/layouts/topmenu/logo.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
 }
@@ -10765,7 +10810,6 @@ html.is-immediately .tpl__container {
   left: 0;
 }
 .app-lt__topmenu .menu-holder > .inner {
-  padding: 0 12px;
   position: absolute;
   top: 0;
   right: 0;
@@ -10796,24 +10840,6 @@ html.is-immediately .tpl__container {
   display: block;
   text-decoration: none;
 }
-.app-lt__topmenu .menu li > a .icon {
-  margin: 0 8px 0 0;
-}
-.app-lt__topmenu .menu li > a .icon.medium {
-  margin-top: -2px;
-}
-.app-lt__topmenu .menu li > a:hover {
-  text-decoration: underline;
-}
-.app-lt__topmenu .menu li > a:hover .icon {
-  opacity: 0.7;
-}
-.app-lt__topmenu .menu li.active {
-  color: #fff;
-}
-.app-lt__topmenu .menu li.active > a {
-  color: #fff;
-}
 .app-lt__topmenu .menu ul {
   margin: 0;
   padding: 0;
@@ -10838,39 +10864,35 @@ html.is-immediately .tpl__container {
     vertical-align: top;
   }
   html.is-adaptive .app-lt__topmenu .menu > li {
-    margin: 0 0 0 25px;
+    margin: 0 0 0 1px;
   }
   html.is-adaptive .app-lt__topmenu .menu > li > a {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 256px;
+    padding: 0 12px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  html.is-adaptive .app-lt__topmenu .menu > li > a:hover {
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
   html.is-adaptive .app-lt__topmenu .menu > li.has-dropdown > a {
     background-image: url("../libs/application/img/icons/x-small/arrow-white-down.png");
-    padding-right: 20px;
-    background-position: 100% center;
+    padding-right: 24px;
+    background-position: calc(94%) center;
     background-repeat: no-repeat;
-  }
-  html.is-adaptive .app-lt__topmenu .menu > li:before {
-    width: 1px;
-    height: 16px;
-    display: block;
-    position: absolute;
-    background: #ffffff;
-    content: '';
-    top: 12px;
-    right: auto;
-    bottom: auto;
-    left: -12px;
   }
   html.is-adaptive .app-lt__topmenu .menu > li:first-child {
     margin: 0;
   }
-  html.is-adaptive .app-lt__topmenu .menu > li:first-child:before {
-    display: none;
+  html.is-adaptive .app-lt__topmenu .menu > li:hover > a {
+    background-color: #2985e0;
+    color: #ffffff;
   }
   html.is-adaptive .app-lt__topmenu .menu > li:hover .pt__menu-dropdown {
     visibility: visible;
@@ -10894,15 +10916,15 @@ html.is-immediately .tpl__container {
     position: absolute;
     margin: 0;
     padding: 4px 0px;
+    border-width: 1px;
     list-style: none;
     opacity: 0;
+    top: 100%;
     right: auto;
     bottom: auto;
     left: 0;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
-    top: 100%;
-    left: -11px;
     border-top: none;
     border-radius: 0 0 3px 3px;
   }
@@ -10936,7 +10958,21 @@ html.is-immediately .tpl__container {
   }
   html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown li ul {
     top: -5px;
-    left: 100%;
+    right: auto;
+    bottom: auto;
+    left: calc(100%);
+  }
+  html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown li ul.pull-left {
+    top: -5px;
+    right: auto;
+    bottom: auto;
+    left: calc(100%);
+  }
+  html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown li ul.pull-right {
+    top: -5px;
+    right: calc(100%);
+    bottom: auto;
+    left: auto;
   }
   html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown li.sep {
     display: none;
@@ -10973,42 +11009,18 @@ html.is-immediately .tpl__container {
     bottom: auto;
     left: 0;
   }
-  html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown.pull-left li ul {
-    top: -5px;
-    right: auto;
-    bottom: auto;
-    left: 100%;
-  }
   html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown.pull-right {
     top: 100%;
     right: 0;
     bottom: auto;
     left: auto;
   }
-  html.is-adaptive .app-lt__topmenu .menu .pt__menu-dropdown.pull-right li ul {
-    top: -5px;
-    right: 100%;
-    bottom: auto;
-    left: auto;
-  }
   html.is-adaptive .app-lt__topmenu .menu.right {
     float: right;
   }
-  html.is-adaptive .app-lt__topmenu .menu.right .pt__menu-dropdown {
-    top: 100%;
-    right: 0;
-    bottom: auto;
-    left: auto;
-  }
-  html.is-adaptive .app-lt__topmenu .menu.right .pt__menu-dropdown li ul {
-    top: -5px;
-    right: 100%;
-    bottom: auto;
-    left: auto;
-  }
   html.is-adaptive .app-lt__topmenu .menu.left {
     float: left;
-    margin: 0 0 0 36px;
+    margin: 0 0 0 48px;
   }
   html.is-adaptive .app-lt__topmenu .menu-centered .menu li {
     margin: 0;
@@ -11021,10 +11033,13 @@ html.is-immediately .tpl__container {
     display: none;
   }
   html.is-adaptive .app-lt__topmenu .menu-centered .menu a {
-    padding: 0 12px;
+    padding: 0;
     font-size: 0;
   }
-  html.is-adaptive .app-lt__topmenu .menu-centered .menu a .icon.medium {
+  html.is-adaptive .app-lt__topmenu .menu-centered .menu a .icon {
+    width: 48px;
+    height: 40px;
+    vertical-align: top;
     margin: 0;
   }
 }
@@ -11141,6 +11156,9 @@ html.is-immediately .tpl__container {
     padding: 0 12px;
     line-height: 40px;
   }
+  html.is-adaptive .app-lt__topmenu .menu li a:hover {
+    text-decoration: underline;
+  }
   html.is-adaptive .app-lt__topmenu .menu li.has-dropdown > a {
     background: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -11148,6 +11166,15 @@ html.is-immediately .tpl__container {
   html.is-adaptive .app-lt__topmenu .menu ul li a {
     background: rgba(255, 255, 255, 0.2);
     padding-left: 24px;
+  }
+  html.is-adaptive .app-lt__topmenu .menu-centered .menu a {
+    padding: 0 12px;
+  }
+  html.is-adaptive .app-lt__topmenu .menu-centered .menu .icon {
+    margin: 0 8px 0 0;
+  }
+  html.is-adaptive .app-lt__topmenu .menu-centered .menu .icon.medium {
+    margin-top: -2px;
   }
   html.is-adaptive .app-lt__topmenu.is-expanded .menu-holder {
     -webkit-transform: translateY(0);
@@ -11641,19 +11668,19 @@ html.is-immediately .tpl__container {
 .app-lt__plan .plan-abstract ul ul ul {
   list-style: disc;
 }
-.app-lt__plan .plan-abstract .cm__tags:last-child,
-.app-lt__plan .plan-abstract h1:last-child,
-.app-lt__plan .plan-abstract h2:last-child,
-.app-lt__plan .plan-abstract h3:last-child,
-.app-lt__plan .plan-abstract h4:last-child,
-.app-lt__plan .plan-abstract h5:last-child,
-.app-lt__plan .plan-abstract h6:last-child,
-.app-lt__plan .plan-abstract p:last-child,
-.app-lt__plan .plan-abstract dl:last-child,
-.app-lt__plan .plan-abstract ul:last-child,
-.app-lt__plan .plan-abstract ol:last-child,
-.app-lt__plan .plan-abstract hr:last-child {
-  margin: 0;
+.app-lt__plan .plan-abstract .cm__tags,
+.app-lt__plan .plan-abstract h1,
+.app-lt__plan .plan-abstract h2,
+.app-lt__plan .plan-abstract h3,
+.app-lt__plan .plan-abstract h4,
+.app-lt__plan .plan-abstract h5,
+.app-lt__plan .plan-abstract h6,
+.app-lt__plan .plan-abstract p,
+.app-lt__plan .plan-abstract dl,
+.app-lt__plan .plan-abstract ul,
+.app-lt__plan .plan-abstract ol,
+.app-lt__plan .plan-abstract hr {
+  text-align: center;
 }
 .app-lt__plan .plan-info ul {
   margin: 0;
@@ -11821,6 +11848,7 @@ html.is-immediately .tpl__container {
   padding: 4px;
   background: #fff;
   border: 1px solid #cccccc;
+  border-width: 1px;
   border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   -moz-box-sizing: border-box;
@@ -11890,6 +11918,7 @@ html.is-immediately .tpl__container {
   padding: 4px;
   background: #fff;
   border: 1px solid #cccccc;
+  border-width: 1px;
   border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   -moz-box-sizing: border-box;
@@ -11994,11 +12023,13 @@ html.is-immediately .tpl__container {
   color: #3a3a3a;
 }
 .app-mod__menu > ul > li {
-  margin: 0 0 0 12px;
   position: relative;
   z-index: 1;
 }
 .app-mod__menu > ul > li:first-child {
+  margin: 0;
+}
+.app-mod__menu > ul > li:last-child {
   margin: 0;
 }
 .app-mod__menu > ul > li > a {
@@ -12037,6 +12068,7 @@ html.is-immediately .tpl__container {
   position: absolute;
   margin: 0;
   padding: 4px 0px;
+  border-width: 1px;
   list-style: none;
   opacity: 0;
   top: 100%;
@@ -12076,7 +12108,21 @@ html.is-immediately .tpl__container {
 }
 .app-mod__menu .pt__menu-dropdown li ul {
   top: -5px;
-  left: 100%;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.app-mod__menu .pt__menu-dropdown li ul.pull-left {
+  top: -5px;
+  right: auto;
+  bottom: auto;
+  left: calc(100%);
+}
+.app-mod__menu .pt__menu-dropdown li ul.pull-right {
+  top: -5px;
+  right: calc(100%);
+  bottom: auto;
+  left: auto;
 }
 .app-mod__menu .pt__menu-dropdown li.sep {
   display: none;
@@ -12113,21 +12159,9 @@ html.is-immediately .tpl__container {
   bottom: auto;
   left: 0;
 }
-.app-mod__menu .pt__menu-dropdown.pull-left li ul {
-  top: -5px;
-  right: auto;
-  bottom: auto;
-  left: 100%;
-}
 .app-mod__menu .pt__menu-dropdown.pull-right {
   top: 100%;
   right: 0;
-  bottom: auto;
-  left: auto;
-}
-.app-mod__menu .pt__menu-dropdown.pull-right li ul {
-  top: -5px;
-  right: 100%;
   bottom: auto;
   left: auto;
 }
@@ -12167,72 +12201,6 @@ html.is-immediately .tpl__container {
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
 }
-.app-mod__menu .menu-select .select,
-.app-mod__menu .menu-select select {
-  height: 28px;
-  padding-right: 28px;
-}
-.app-mod__menu .menu-button {
-  width: 28px;
-  height: 28px;
-}
-.app-mod__menu.vertical ul {
-  margin: 12px 0 0;
-  padding: 0;
-}
-.app-mod__menu.vertical ul:first-child {
-  margin: 0;
-}
-.app-mod__menu.vertical ul ul {
-  margin-left: 24px;
-}
-.app-mod__menu.vertical li {
-  display: block;
-  margin: 12px 0 0;
-}
-.app-mod__menu.vertical li:first-child {
-  margin: 0;
-}
-.app-mod__menu.vertical a {
-  display: inline-block;
-  vertical-align: middle;
-  white-space: normal;
-  -webkit-transition: color 300ms ease-in-out;
-  transition: color 300ms ease-in-out;
-}
-.app-mod__menu.vertical a:hover {
-  -webkit-transition: color 100ms ease-in-out;
-  transition: color 100ms ease-in-out;
-}
-.app-mod__menu.vertical.pull-right ul ul {
-  margin-left: 0;
-  margin-right: 24px;
-}
-.app-mod__menu.vertical.pull-center ul ul {
-  margin-left: 0;
-  margin-right: 0;
-}
-.app-mod__menu.pull-left > ul {
-  text-align: left;
-}
-.app-mod__menu.pull-center > ul {
-  text-align: center;
-}
-.app-mod__menu.pull-right > ul {
-  text-align: right;
-}
-.app-mod__menu.pull-right .pt__menu-dropdown {
-  top: 100%;
-  right: 0;
-  bottom: auto;
-  left: auto;
-}
-.app-mod__menu.pull-right .pt__menu-dropdown li ul {
-  top: -5px;
-  right: 100%;
-  bottom: auto;
-  left: auto;
-}
 .app-mod__menu:not(.vertical).pull-justify > ul {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12253,6 +12221,199 @@ html.is-immediately .tpl__container {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: center;
+}
+.app-mod__menu.default.pull-left > ul {
+  text-align: left;
+}
+.app-mod__menu.default.pull-left > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.default.pull-left > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.default.pull-center > ul {
+  text-align: center;
+}
+.app-mod__menu.default.pull-center > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.default.pull-center > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.default.pull-right > ul {
+  text-align: right;
+}
+.app-mod__menu.default.pull-right > ul > li {
+  margin-left: 12px;
+}
+.app-mod__menu.default.pull-right > ul > li:first-child {
+  margin-left: 0;
+}
+.app-mod__menu.default.pull-justify > ul {
+  text-align: center;
+}
+.app-mod__menu.default.pull-justify > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.default.pull-justify > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.default .menu-select .select,
+.app-mod__menu.default .menu-select select {
+  color: #3a3a3a;
+}
+.app-mod__menu.default .menu-select .select option,
+.app-mod__menu.default .menu-select .select optgroup,
+.app-mod__menu.default .menu-select select option,
+.app-mod__menu.default .menu-select select optgroup {
+  color: #3a3a3a;
+}
+.app-mod__menu.primary.pull-left > ul {
+  text-align: left;
+}
+.app-mod__menu.primary.pull-left > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.primary.pull-left > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.primary.pull-center > ul {
+  text-align: center;
+}
+.app-mod__menu.primary.pull-center > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.primary.pull-center > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.primary.pull-right > ul {
+  text-align: right;
+}
+.app-mod__menu.primary.pull-right > ul > li {
+  margin-left: 12px;
+}
+.app-mod__menu.primary.pull-right > ul > li:first-child {
+  margin-left: 0;
+}
+.app-mod__menu.primary.pull-justify > ul {
+  text-align: center;
+}
+.app-mod__menu.primary.pull-justify > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.primary.pull-justify > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.primary .menu-select .select,
+.app-mod__menu.primary .menu-select select {
+  color: #3a3a3a;
+}
+.app-mod__menu.primary .menu-select .select option,
+.app-mod__menu.primary .menu-select .select optgroup,
+.app-mod__menu.primary .menu-select select option,
+.app-mod__menu.primary .menu-select select optgroup {
+  color: #3a3a3a;
+}
+.app-mod__menu.secondary.pull-left > ul {
+  text-align: left;
+}
+.app-mod__menu.secondary.pull-left > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.secondary.pull-left > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.secondary.pull-center > ul {
+  text-align: center;
+}
+.app-mod__menu.secondary.pull-center > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.secondary.pull-center > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.secondary.pull-right > ul {
+  text-align: right;
+}
+.app-mod__menu.secondary.pull-right > ul > li {
+  margin-left: 12px;
+}
+.app-mod__menu.secondary.pull-right > ul > li:first-child {
+  margin-left: 0;
+}
+.app-mod__menu.secondary.pull-justify > ul {
+  text-align: center;
+}
+.app-mod__menu.secondary.pull-justify > ul > li {
+  margin-right: 12px;
+}
+.app-mod__menu.secondary.pull-justify > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.secondary .menu-select .select,
+.app-mod__menu.secondary .menu-select select {
+  color: #3a3a3a;
+}
+.app-mod__menu.secondary .menu-select .select option,
+.app-mod__menu.secondary .menu-select .select optgroup,
+.app-mod__menu.secondary .menu-select select option,
+.app-mod__menu.secondary .menu-select select optgroup {
+  color: #3a3a3a;
+}
+.app-mod__menu.vertical ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.app-mod__menu.vertical ul > li {
+  margin: 0;
+  padding: 0;
+}
+.app-mod__menu.vertical li {
+  display: block;
+}
+.app-mod__menu.vertical a {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+.app-mod__menu.vertical a:hover {
+  -webkit-transition: color 100ms ease-in-out;
+  transition: color 100ms ease-in-out;
+}
+.app-mod__menu.vertical ul,
+.app-mod__menu.vertical ul li {
+  margin-top: 12px;
+}
+.app-mod__menu.vertical ul:first-child,
+.app-mod__menu.vertical ul li:first-child {
+  margin-top: 0;
+}
+.app-mod__menu.vertical.pull-left ul {
+  text-align: left;
+}
+.app-mod__menu.vertical.pull-left ul ul {
+  margin-left: 24px;
+}
+.app-mod__menu.vertical.pull-center ul {
+  text-align: center;
+}
+.app-mod__menu.vertical.pull-right ul {
+  text-align: right;
+}
+.app-mod__menu.vertical.pull-right ul ul {
+  margin-right: 24px;
+}
+.app-mod__menu .menu-select .select,
+.app-mod__menu .menu-select select {
+  height: 28px;
+  padding-right: 28px;
+}
+.app-mod__menu .menu-button {
+  width: 28px;
+  height: 28px;
 }
 /* ******* MODULES: MENU: ADAPTIVE ******* */
 @media only screen and (max-width: 768px) {
@@ -12532,6 +12693,12 @@ html.is-immediately .tpl__container {
 .app-mod__lang-switch.pull-right > ul {
   text-align: right;
 }
+/* ******* MODULES: LANG SWITCH: ADAPTIVE ******* */
+@media only screen and (max-width: 640px) {
+  html.is-adaptive .app-mod__lang-switch > ul {
+    text-align: center;
+  }
+}
 /* ******* MODULES: LANG SWITCH: PRINT ******* */
 @media print {
   .app-mod__lang-switch {
@@ -12697,6 +12864,69 @@ html.is-immediately .tpl__container {
 /* ************************************************ */
 /* ******* APPLICATION ******* */
 /* ************************************************ */
+/* ******* MODULES ******* */
+/* *** MENU *** */
+.app-mod__menu.theme-separator > ul > li:after {
+  width: 1px;
+  height: 14px;
+  display: block;
+  position: absolute;
+  top: 5px;
+  content: '';
+  background-color: #cccccc;
+}
+.app-mod__menu.theme-separator.pull-left > ul > li:last-child:after,
+.app-mod__menu.theme-separator.pull-center > ul > li:last-child:after,
+.app-mod__menu.theme-separator.pull-justify > ul > li:last-child:after {
+  display: none;
+}
+.app-mod__menu.theme-separator.pull-left > ul > li:after,
+.app-mod__menu.theme-separator.pull-center > ul > li:after,
+.app-mod__menu.theme-separator.pull-justify > ul > li:after {
+  right: -8px;
+}
+.app-mod__menu.theme-separator.pull-right > ul > li:first-child:after {
+  display: none;
+}
+.app-mod__menu.theme-separator.pull-right > ul > li:after {
+  left: -8px;
+}
+.app-mod__menu.theme-separator.pull-left > ul {
+  text-align: left;
+}
+.app-mod__menu.theme-separator.pull-left > ul > li {
+  margin-right: 15px;
+}
+.app-mod__menu.theme-separator.pull-left > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.theme-separator.pull-center > ul {
+  text-align: center;
+}
+.app-mod__menu.theme-separator.pull-center > ul > li {
+  margin-right: 15px;
+}
+.app-mod__menu.theme-separator.pull-center > ul > li:last-child {
+  margin-right: 0;
+}
+.app-mod__menu.theme-separator.pull-right > ul {
+  text-align: right;
+}
+.app-mod__menu.theme-separator.pull-right > ul > li {
+  margin-left: 15px;
+}
+.app-mod__menu.theme-separator.pull-right > ul > li:first-child {
+  margin-left: 0;
+}
+.app-mod__menu.theme-separator.pull-justify > ul {
+  text-align: center;
+}
+.app-mod__menu.theme-separator.pull-justify > ul > li {
+  margin-right: 15px;
+}
+.app-mod__menu.theme-separator.pull-justify > ul > li:last-child {
+  margin-right: 0;
+}
 /* ************************************************ */
 /* ******* TEMPLATE ******* */
 /* ************************************************ */
@@ -12740,8 +12970,6 @@ html.is-guide body {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 /* ******* FOOTER ******* */
 /* ******* ADAPTIVE ******* */

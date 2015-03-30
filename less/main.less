@@ -12,7 +12,68 @@
 /* ******* APPLICATION ******* */
 /* ************************************************ */
 
+/* ******* MODULES ******* */
 
+/* *** MENU *** */
+
+.app-mod__menu {
+    &.theme-separator {
+        @item-indent: 15px;
+        @separator-width: 1px;
+        @separator-height: 14px;
+
+        > ul {
+            > li {
+                &:after {
+                    @top: round((@CmFont-Base-LineHeight - @separator-height) / 2);
+                    width: @separator-width;
+                    height: @separator-height;
+                    display: block;
+                    position: absolute;
+                    top: @top;
+                    content: '';
+                    background-color: @CmColor-Border;
+                }
+            }
+        }
+
+        &.pull-left,
+        &.pull-center,
+        &.pull-justify {
+            > ul {
+                > li {
+                    &:last-child {
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+                    &:after {
+                        right: floor(-@item-indent / 2);
+                    }
+                }
+            }
+        }
+
+        &.pull-right {
+            > ul {
+                > li {
+                    &:first-child {
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+                    &:after {
+                        left: floor(-@item-indent / 2);
+                    }
+                }
+            }
+        }
+
+        .app-mod__menu__indent(@item-indent);
+    }
+}
 
 /* ************************************************ */
 /* ******* TEMPLATE ******* */
