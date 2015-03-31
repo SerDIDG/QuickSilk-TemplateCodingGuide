@@ -12260,6 +12260,15 @@ html.is-immediately .tpl__container {
 }
 .app-mod__menu.default .menu-select .select,
 .app-mod__menu.default .menu-select select {
+  height: 28px;
+  padding-right: 28px;
+}
+.app-mod__menu.default .menu-button {
+  width: 28px;
+  height: 28px;
+}
+.app-mod__menu.default .menu-select .select,
+.app-mod__menu.default .menu-select select {
   color: #3a3a3a;
 }
 .app-mod__menu.default .menu-select .select option,
@@ -12267,6 +12276,37 @@ html.is-immediately .tpl__container {
 .app-mod__menu.default .menu-select select option,
 .app-mod__menu.default .menu-select select optgroup {
   color: #3a3a3a;
+}
+.app-mod__menu.default.has-separator > ul > li:after {
+  width: 1px;
+  height: 12px;
+  margin: auto;
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+}
+.app-mod__menu.default.has-separator.pull-left > ul > li:last-child:after,
+.app-mod__menu.default.has-separator.pull-center > ul > li:last-child:after,
+.app-mod__menu.default.has-separator.pull-justify > ul > li:last-child:after {
+  display: none;
+}
+.app-mod__menu.default.has-separator.pull-left > ul > li:after,
+.app-mod__menu.default.has-separator.pull-center > ul > li:after,
+.app-mod__menu.default.has-separator.pull-justify > ul > li:after {
+  right: -7px;
+}
+.app-mod__menu.default.has-separator.pull-right > ul > li:first-child:after {
+  display: none;
+}
+.app-mod__menu.default.has-separator.pull-right > ul > li:after {
+  left: -7px;
+}
+.app-mod__menu.default.has-separator > ul > li:after {
+  background: #cccccc;
 }
 .app-mod__menu.primary.pull-left > ul {
   text-align: left;
@@ -12306,6 +12346,15 @@ html.is-immediately .tpl__container {
 }
 .app-mod__menu.primary .menu-select .select,
 .app-mod__menu.primary .menu-select select {
+  height: 28px;
+  padding-right: 28px;
+}
+.app-mod__menu.primary .menu-button {
+  width: 28px;
+  height: 28px;
+}
+.app-mod__menu.primary .menu-select .select,
+.app-mod__menu.primary .menu-select select {
   color: #3a3a3a;
 }
 .app-mod__menu.primary .menu-select .select option,
@@ -12313,6 +12362,37 @@ html.is-immediately .tpl__container {
 .app-mod__menu.primary .menu-select select option,
 .app-mod__menu.primary .menu-select select optgroup {
   color: #3a3a3a;
+}
+.app-mod__menu.primary.has-separator > ul > li:after {
+  width: 1px;
+  height: 12px;
+  margin: auto;
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+}
+.app-mod__menu.primary.has-separator.pull-left > ul > li:last-child:after,
+.app-mod__menu.primary.has-separator.pull-center > ul > li:last-child:after,
+.app-mod__menu.primary.has-separator.pull-justify > ul > li:last-child:after {
+  display: none;
+}
+.app-mod__menu.primary.has-separator.pull-left > ul > li:after,
+.app-mod__menu.primary.has-separator.pull-center > ul > li:after,
+.app-mod__menu.primary.has-separator.pull-justify > ul > li:after {
+  right: -7px;
+}
+.app-mod__menu.primary.has-separator.pull-right > ul > li:first-child:after {
+  display: none;
+}
+.app-mod__menu.primary.has-separator.pull-right > ul > li:after {
+  left: -7px;
+}
+.app-mod__menu.primary.has-separator > ul > li:after {
+  background: #cccccc;
 }
 .app-mod__menu.secondary.pull-left > ul {
   text-align: left;
@@ -12352,6 +12432,15 @@ html.is-immediately .tpl__container {
 }
 .app-mod__menu.secondary .menu-select .select,
 .app-mod__menu.secondary .menu-select select {
+  height: 28px;
+  padding-right: 28px;
+}
+.app-mod__menu.secondary .menu-button {
+  width: 28px;
+  height: 28px;
+}
+.app-mod__menu.secondary .menu-select .select,
+.app-mod__menu.secondary .menu-select select {
   color: #3a3a3a;
 }
 .app-mod__menu.secondary .menu-select .select option,
@@ -12359,6 +12448,37 @@ html.is-immediately .tpl__container {
 .app-mod__menu.secondary .menu-select select option,
 .app-mod__menu.secondary .menu-select select optgroup {
   color: #3a3a3a;
+}
+.app-mod__menu.secondary.has-separator > ul > li:after {
+  width: 1px;
+  height: 12px;
+  margin: auto;
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+}
+.app-mod__menu.secondary.has-separator.pull-left > ul > li:last-child:after,
+.app-mod__menu.secondary.has-separator.pull-center > ul > li:last-child:after,
+.app-mod__menu.secondary.has-separator.pull-justify > ul > li:last-child:after {
+  display: none;
+}
+.app-mod__menu.secondary.has-separator.pull-left > ul > li:after,
+.app-mod__menu.secondary.has-separator.pull-center > ul > li:after,
+.app-mod__menu.secondary.has-separator.pull-justify > ul > li:after {
+  right: -7px;
+}
+.app-mod__menu.secondary.has-separator.pull-right > ul > li:first-child:after {
+  display: none;
+}
+.app-mod__menu.secondary.has-separator.pull-right > ul > li:after {
+  left: -7px;
+}
+.app-mod__menu.secondary.has-separator > ul > li:after {
+  background: #cccccc;
 }
 .app-mod__menu.vertical ul {
   margin: 0;
@@ -12405,15 +12525,6 @@ html.is-immediately .tpl__container {
 }
 .app-mod__menu.vertical.pull-right ul ul {
   margin-right: 24px;
-}
-.app-mod__menu .menu-select .select,
-.app-mod__menu .menu-select select {
-  height: 28px;
-  padding-right: 28px;
-}
-.app-mod__menu .menu-button {
-  width: 28px;
-  height: 28px;
 }
 /* ******* MODULES: MENU: ADAPTIVE ******* */
 @media only screen and (max-width: 768px) {
@@ -12866,65 +12977,71 @@ html.is-immediately .tpl__container {
 /* ************************************************ */
 /* ******* MODULES ******* */
 /* *** MENU *** */
-.app-mod__menu.theme-separator > ul > li:after {
+.app-mod__menu.theme-my > ul > li:after {
   width: 1px;
-  height: 14px;
+  height: 12px;
+  margin: auto;
   display: block;
   position: absolute;
-  top: 5px;
   content: '';
-  background-color: #cccccc;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
 }
-.app-mod__menu.theme-separator.pull-left > ul > li:last-child:after,
-.app-mod__menu.theme-separator.pull-center > ul > li:last-child:after,
-.app-mod__menu.theme-separator.pull-justify > ul > li:last-child:after {
+.app-mod__menu.theme-my.pull-left > ul > li:last-child:after,
+.app-mod__menu.theme-my.pull-center > ul > li:last-child:after,
+.app-mod__menu.theme-my.pull-justify > ul > li:last-child:after {
   display: none;
 }
-.app-mod__menu.theme-separator.pull-left > ul > li:after,
-.app-mod__menu.theme-separator.pull-center > ul > li:after,
-.app-mod__menu.theme-separator.pull-justify > ul > li:after {
+.app-mod__menu.theme-my.pull-left > ul > li:after,
+.app-mod__menu.theme-my.pull-center > ul > li:after,
+.app-mod__menu.theme-my.pull-justify > ul > li:after {
   right: -8px;
 }
-.app-mod__menu.theme-separator.pull-right > ul > li:first-child:after {
+.app-mod__menu.theme-my.pull-right > ul > li:first-child:after {
   display: none;
 }
-.app-mod__menu.theme-separator.pull-right > ul > li:after {
+.app-mod__menu.theme-my.pull-right > ul > li:after {
   left: -8px;
 }
-.app-mod__menu.theme-separator.pull-left > ul {
+.app-mod__menu.theme-my > ul > li:after {
+  background: #cccccc;
+}
+.app-mod__menu.theme-my.pull-left > ul {
   text-align: left;
 }
-.app-mod__menu.theme-separator.pull-left > ul > li {
+.app-mod__menu.theme-my.pull-left > ul > li {
   margin-right: 15px;
 }
-.app-mod__menu.theme-separator.pull-left > ul > li:last-child {
+.app-mod__menu.theme-my.pull-left > ul > li:last-child {
   margin-right: 0;
 }
-.app-mod__menu.theme-separator.pull-center > ul {
+.app-mod__menu.theme-my.pull-center > ul {
   text-align: center;
 }
-.app-mod__menu.theme-separator.pull-center > ul > li {
+.app-mod__menu.theme-my.pull-center > ul > li {
   margin-right: 15px;
 }
-.app-mod__menu.theme-separator.pull-center > ul > li:last-child {
+.app-mod__menu.theme-my.pull-center > ul > li:last-child {
   margin-right: 0;
 }
-.app-mod__menu.theme-separator.pull-right > ul {
+.app-mod__menu.theme-my.pull-right > ul {
   text-align: right;
 }
-.app-mod__menu.theme-separator.pull-right > ul > li {
+.app-mod__menu.theme-my.pull-right > ul > li {
   margin-left: 15px;
 }
-.app-mod__menu.theme-separator.pull-right > ul > li:first-child {
+.app-mod__menu.theme-my.pull-right > ul > li:first-child {
   margin-left: 0;
 }
-.app-mod__menu.theme-separator.pull-justify > ul {
+.app-mod__menu.theme-my.pull-justify > ul {
   text-align: center;
 }
-.app-mod__menu.theme-separator.pull-justify > ul > li {
+.app-mod__menu.theme-my.pull-justify > ul > li {
   margin-right: 15px;
 }
-.app-mod__menu.theme-separator.pull-justify > ul > li:last-child {
+.app-mod__menu.theme-my.pull-justify > ul > li:last-child {
   margin-right: 0;
 }
 /* ************************************************ */

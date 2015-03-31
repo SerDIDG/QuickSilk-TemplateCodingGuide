@@ -40,163 +40,211 @@
 
 <ul class="com__tabset__content-ul" data-element="tabset" data-config='{"toggleOnHashChange" : true}'>
     <li data-node="tabs:[]:container" data-config='{"id" : "styling", "title" : "Стилизация"}'>
+        <p>Стили и миксины модуля меню можно найти в локальном файле <code>libs/application/less/modules/Menu.less</code></p>
         <h2>LESS переменные</h2>
-        <p>В первую очередь меню стоит стилизировать через доступные переменные. Их список можно найти в локальном файле <code>libs/application/variables.less</code>.</p>
+        <p>В первую очередь меню стоит стилизировать через доступные переменные. Список переменных можно найти в локальном файле <code>libs/application/less/variables.less</code>.</p>
         <ul class="cm__list">
             <li><code>@AppModuleMenu-Default-Indent</code> - Вьюха default. Отступ между элементами меню.</li>
+            <li><code>@AppModuleMenu-Default-SelectSize</code> - Вьюха default. Высота элемента select для мобильного устройства.</li>
             <li><code>@AppModuleMenu-Default-SelectColor</code> - Вьюха default. Цвет текста в элементе select для мобильного устройства.</li>
+            <li><code>@AppModuleMenu-Default-SeparatorWidth</code> - Вьюха default. Ширина сепаратора, если указан класс <code>has-separator</code>.</li>
+            <li><code>@AppModuleMenu-Default-SeparatorHeight</code> - Вьюха default. Высота сепаратора, если указан класс <code>has-separator</code>.</li>
+            <li><code>@AppModuleMenu-Default-SeparatorBackground</code> - Вьюха default. Фон сепаратора, если указан класс <code>has-separator</code>.</li>
+        </ul>
+        <ul class="cm__list">
             <li><code>@AppModuleMenu-Primary-Indent</code> - Вьюха primary. Отступ между элементами меню.</li>
+            <li><code>@AppModuleMenu-Primary-SelectSize</code> - Вьюха primary. Высота элемента select для мобильного устройства.</li>
             <li><code>@AppModuleMenu-Primary-SelectColor</code> - Вьюха primary. Цвет текста в элементе select для мобильного устройства.</li>
+            <li><code>@AppModuleMenu-Primary-SeparatorWidth</code> - Вьюха primary. Ширина сепаратора, если указан класс <code>has-separator</code>.</li>
+            <li><code>@AppModuleMenu-Primary-SeparatorHeight</code> - Вьюха primary. Высота сепаратора, если указан класс <code>has-separator</code>.</li>
+            <li><code>@AppModuleMenu-Primary-SeparatorBackground</code> - Вьюха primary. Фон сепаратора, если указан класс <code>has-separator</code>.</li>
+        </ul>
+        <ul class="cm__list">
             <li><code>@AppModuleMenu-Secondary-Indent</code> - Вьюха secondary. Отступ между элементами меню.</li>
+            <li><code>@AppModuleMenu-Secondary-SelectSize</code> - Вьюха secondary. Высота элемента select для мобильного устройства.</li>
             <li><code>@AppModuleMenu-Secondary-SelectColor</code> - Вьюха secondary. Цвет текста в элементе select для мобильного устройства.</li>
+            <li><code>@AppModuleMenu-Secondary-SeparatorWidth</code> - Вьюха secondary. Ширина сепаратора, если указан класс <code>has-separator</code>.</li>
+            <li><code>@AppModuleMenu-Secondary-SeparatorHeight</code> - Вьюха secondary. Высота сепаратора, если указан класс <code>has-separator</code>.</li>
+            <li><code>@AppModuleMenu-Secondary-SeparatorBackground</code> - Вьюха secondary. Фон сепаратора, если указан класс <code>has-separator</code>.</li>
+        </ul>
+        <ul class="cm__list">
             <li><code>@AppModuleMenu-Vertical-Indent</code> - Вьюха vertical. Отступ между элементами меню.</li>
-            <li><code>@AppModuleMenu-Vertical-IndentX</code> - Вьюха vertical. Отступ для вложенных элементов.</li>
+            <li><code>@AppModuleMenu-Vertical-ChildIndent</code> - Вьюха vertical. Отступ дочернего меню.</li>
         </ul>
 
         <h2>Пользовательские вьюхи</h2>
-        <p>Иногда в зависимости от шаблона имеет смысл делать дополнительные вьюхи. При написании стилей стоит учитывать, что у меню есть выравнивание и некоторые стили нужно прописывать в зависимости от него.</p>
-        <h3>Задание отступов между элеметами меню</h3>
+        <p>Иногда в зависимости от шаблона есть нужда переопределить текущую вьюху или добавить новую. Вьюхи находятся на сервере в директории <code>module/system/Page/view/page/block/menu/templates</code>. Заменять или добавлять новые вьюхи следует в директорию шаблона <code>public/web/ID/templates/Template_ID/view/page/block/menu/templates</code>, где ID - Microsite URL заполненный в форме создания микросайта, Template_ID - ID выбранного шаблона в форме создания микросайта.</p>
+        <p>При написании стилей стоит учитывать, что у меню есть выравнивание и некоторые стили нужно прописывать в зависимости от него.</p>
+        <textarea class="cm-codebox cm-autoresize" readonly="">
+.app-mod__menu {
+    &.theme-my {
+        &.pull-left,
+        &.pull-center,
+        &.pull-justify {
+            /* ... */
+        }
+
+        &.pull-right {
+            /* ... */
+        }
+    }
+}</textarea>
+        <h3>Задание отступов между элеметами горизонтального меню</h3>
         <textarea class="cm-codebox cm-autoresize" readonly="">
 .app-mod__menu {
     &.theme-my {
         @item-indent: 24px;
         .app-mod__menu__indent(@item-indent);
     }
-}
-</textarea>
-
-        <h2>Пример пользовательской вьюхи с разделительными черточками</h2>
+}</textarea>
+        <h3>Задание отступов между элеметами вертикального меню</h3>
         <textarea class="cm-codebox cm-autoresize" readonly="">
 .app-mod__menu {
-    &.theme-separator {
+    &.vertical {
+        &.theme-my {
+            @item-indent: 8px;
+            @child-indent: 12px;
+            .app-mod__menu__indent--vertical(@item-indent, @child-indent);
+        }
+    }
+}</textarea>
+
+        <h2>Пользовательская вьюха с разделительными черточками прописанными через класс</h2>
+        <p>В примере ниже мы создадим пользовательскую вьюху на основе secondary либо переопределим вьюху secondary добавив класс <code>has-separator</code> отвечающий за разделительные черточки.</p>
+        <textarea class="cm-codebox cm-autoresize" readonly="">
+<div class="app__module app-mod__menu secondary has-separator <?php echo $this->Menu()->alignment($this->alignment); ?>" data-element="module-menu">
+    /* ... */
+</div></textarea>
+
+        <h2>Пользовательская вьюха с разделительными черточками прописанными через миксин</h2>
+        <p>Ниже представлен пример для пользовательской вьюхи с сепараторами. Если между элементами меню нет отступов, нет нужды использовать миксин для сепараторов, разделители можно сделать и с помощью border.</p>
+        <textarea class="cm-codebox cm-autoresize" readonly="">
+<div class="app__module app-mod__menu theme-my <?php echo $this->Menu()->alignment($this->alignment); ?>" data-element="module-menu">
+    /* ... */
+</div></textarea>
+        <textarea class="cm-codebox cm-autoresize" readonly="">
+.app-mod__menu {
+    &.theme-my {
         @item-indent: 15px;
         @separator-width: 1px;
-        @separator-height: 14px;
+        @separator-height: 12px;
+        @separator-background: @CmColor-Primary-DarkDefault;
+
+        .app-mod__menu--has-separator(@separator-width, @separator-height, @separator-background, @item-indent);
+        .app-mod__menu__indent(@item-indent);
+    }
+}</textarea>
+        <p>Если нужно как-то иначе стилизировать сепаратор, можно прописать ему стили вручную. Стили стоит прописывать после миксинов сепараторов.</p>
+        <textarea class="cm-codebox cm-autoresize" readonly="">
+.app-mod__menu {
+    &.theme-my {
+        /* Mixins goes here */
 
         > ul {
             > li {
                 &:after {
-                    @top: round((@CmFont-Base-LineHeight - @separator-height) / 2);
-                    width: @separator-width;
-                    height: @separator-height;
-                    display: block;
-                    position: absolute;
-                    top: @top;
-                    content: '';
-                    background-color: @CmColor-Border;
+                    /* Styles goes here */
                 }
             }
         }
-
-        &.pull-left,
-        &.pull-center,
-        &.pull-justify {
-            > ul {
-                > li {
-                    &:last-child {
-                        &:after {
-                            display: none;
-                        }
-                    }
-
-                    &:after {
-                        right: floor(-@item-indent / 2);
-                    }
-                }
-            }
-        }
-
-        &.pull-right {
-            > ul {
-                > li {
-                    &:first-child {
-                        &:after {
-                            display: none;
-                        }
-                    }
-
-                    &:after {
-                        left: floor(-@item-indent / 2);
-                    }
-                }
-            }
-        }
-
-        .app-mod__menu__indent(@item-indent);
     }
 }</textarea>
-        <h3>Выравнивание по левому краю</h3>
-        <div class="app__module app-mod__menu pull-left theme-separator" data-element="module-menu">
-            <ul>
-                <li class="active">
-                    <a>First Item</a>
-                </li>
-                <li>
-                    <a>Second Item</a>
-                </li>
-                <li>
-                    <a>Third Item</a>
-                </li>
-            </ul>
-            <div class="menu-select">
-                <div class="menu-button"></div>
-                <select data-node="AppModuleMenu.select">
-                    <option value="http://google.com">About</option>
-                    <option>OUR PUBLICATIONS</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <h3>Выравнивание по центру</h3>
-        <div class="app__module app-mod__menu pull-center theme-separator" data-element="module-menu">
-            <ul>
-                <li class="active">
-                    <a>First Item</a>
-                </li>
-                <li>
-                    <a>Second Item</a>
-                </li>
-                <li>
-                    <a>Third Item</a>
-                </li>
-            </ul>
-            <div class="menu-select">
-                <div class="menu-button"></div>
-                <select data-node="AppModuleMenu.select">
-                    <option value="http://google.com">About</option>
-                    <option>OUR PUBLICATIONS</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <h3>Выравнивание по правому краю</h3>
-        <div class="app__module app-mod__menu pull-right theme-separator" data-element="module-menu">
-            <ul>
-                <li class="active">
-                    <a>First Item</a>
-                </li>
-                <li>
-                    <a>Second Item</a>
-                </li>
-                <li>
-                    <a>Third Item</a>
-                </li>
-            </ul>
-            <div class="menu-select">
-                <div class="menu-button"></div>
-                <select data-node="AppModuleMenu.select">
-                    <option value="http://google.com">About</option>
-                    <option>OUR PUBLICATIONS</option>
-                </select>
-            </div>
-        </div>
     </li>
 
     <li data-node="tabs:[]:container" data-config='{"id" : "examples", "title" : "Примеры отображения дефолтных вьюх"}'>
         <a name="default"></a>
         <h2>Default Menu</h2>
         <h3>Pull Left</h3>
-        <div class="app__module app-mod__menu pull-left default" data-element="module-menu">
+        <div class="app__module app-mod__menu default pull-left" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>&nbsp; tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu default has-separator pull-left" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -287,7 +335,96 @@
         </div>
         <br>
         <h3>Pull Center</h3>
-        <div class="app__module app-mod__menu pull-center default" data-element="module-menu">
+        <div class="app__module app-mod__menu default pull-center" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>&nbsp; tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu default has-separator pull-center" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -378,7 +515,96 @@
         </div>
         <br>
         <h3>Pull Right</h3>
-        <div class="app__module app-mod__menu pull-right default" data-element="module-menu">
+        <div class="app__module app-mod__menu default pull-right" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>&nbsp; tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu default has-separator pull-right" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -474,7 +700,96 @@
         <h2>Primary Menu</h2>
         <p>If styles not provided displays like default menu</p>
         <h3>Pull Left</h3>
-        <div class="app__module app-mod__menu pull-left primary" data-element="module-menu">
+        <div class="app__module app-mod__menu primary pull-left" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>&nbsp; tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu primary has-separator pull-left" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -565,7 +880,96 @@
         </div>
         <br>
         <h3>Pull Center</h3>
-        <div class="app__module app-mod__menu pull-center primary" data-element="module-menu">
+        <div class="app__module app-mod__menu primary pull-center" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>&nbsp; tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu primary has-separator pull-center" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -656,7 +1060,96 @@
         </div>
         <br>
         <h3>Pull Right</h3>
-        <div class="app__module app-mod__menu pull-right primary" data-element="module-menu">
+        <div class="app__module app-mod__menu primary pull-right" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>&nbsp; tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu primary has-separator pull-right" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -751,7 +1244,96 @@
         <h2>Secondary Menu</h2>
         <p>If styles not provided displays like default menu</p>
         <h3>Pull Left</h3>
-        <div class="app__module app-mod__menu pull-left secondary" data-element="module-menu">
+        <div class="app__module app-mod__menu secondary pull-left" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu secondary has-separator pull-left" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -842,7 +1424,96 @@
         </div>
         <br>
         <h3>Pull Center</h3>
-        <div class="app__module app-mod__menu pull-center secondary" data-element="module-menu">
+        <div class="app__module app-mod__menu secondary pull-center" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu secondary has-separator pull-center" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -933,7 +1604,96 @@
         </div>
         <br>
         <h3>Pull Right</h3>
-        <div class="app__module app-mod__menu pull-right secondary" data-element="module-menu">
+        <div class="app__module app-mod__menu secondary pull-right" data-element="module-menu">
+            <ul>
+                <li class="active">
+                    <a>QuickSilk</a>
+                </li>
+                <li>
+                    <a>Solutions</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Services</a>
+                    <ul class="pt__menu-dropdown">
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Hosting</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Canadian Data Centre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Web Development</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>Qwwertty</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Domain Name Registration &amp; Transfers</a>
+                        </li>
+                        <li>
+                            <a>eCommerce Web Hosting</a>
+                        </li>
+                        <li>
+                            <a>Ecommerce Web Development</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>Customer Support</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Desktop Email Setup</a>
+                        </li>
+                        <li>
+                            <a>Web Hosting Control Panel</a>
+                        </li>
+                        <li>
+                            <a>Domain Name Transfers</a>
+                        </li>
+                        <li>
+                            <a>FTP Tutorials</a>
+                        </li>
+                        <li class="pt__menu has-dropdown">
+                            <a>Database Tutorials</a>
+                            <ul class="pt__menu-dropdown">
+                                <li>
+                                    <a>tesst</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Blog</a>
+                </li>
+                <li class="pt__menu has-dropdown">
+                    <a>About</a>
+                    <ul class="pt__menu-dropdown">
+                        <li>
+                            <a>Management &amp; Advisory Board</a>
+                        </li>
+                        <li>
+                            <a>Community Initiatives</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+            </ul>
+            <div class="menu-select">
+                <div class="menu-button"></div>
+                <select data-node="AppModuleMenu.select">
+                    <option value="http://google.com">About</option>
+                    <option>OUR PUBLICATIONS</option>
+                </select>
+            </div>
+        </div>
+        <div class="app__module app-mod__menu secondary has-separator pull-right" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -1027,7 +1787,7 @@
         <a name="vertical"></a>
         <h2>Vertical Menu</h2>
         <h3>Pull Left</h3>
-        <div class="app__module app-mod__menu pull-left vertical" data-element="module-menu">
+        <div class="app__module app-mod__menu vertical pull-left" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -1106,7 +1866,7 @@
         </div>
         <br>
         <h3>Pull Center</h3>
-        <div class="app__module app-mod__menu pull-center vertical" data-element="module-menu">
+        <div class="app__module app-mod__menu vertical pull-center" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
@@ -1185,7 +1945,7 @@
         </div>
         <br>
         <h3>Pull Right</h3>
-        <div class="app__module app-mod__menu pull-right vertical" data-element="module-menu">
+        <div class="app__module app-mod__menu vertical pull-right" data-element="module-menu">
             <ul>
                 <li class="active">
                     <a>QuickSilk</a>
