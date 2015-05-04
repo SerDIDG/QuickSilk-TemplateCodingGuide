@@ -45,14 +45,14 @@
     <h2>Структура шаблона</h2>
     <p>Шаблон для QuickSilk CMS делится на три блока: <code>header</code>, <code>content</code> и <code>footer</code>. Каждый блок как минимум должен состоять из двух элементов - внешнего и внутреннего. Эти два элемента обязательны - на них навешаны специальные классы, например, для блока <code>header</code> это элементы с классами: внешний - <code>tpl__header</code>, внутренний - <code>tpl__header__inner</code>. Название классов обязательны - к ним привязываются стили, назначенные пользователем из админки. Внутренняя структура каждого блока может отличаться от эталонной, так же внутренний элемент может быть в другом месте по иерархии.</p>
     <p>Ниже представлен пример структуры пустого шаблона.</p>
-    <textarea class="cm-codebox cm-autoresize" readonly data-element="simple-togglebox">
+    <textarea class="pt__box-code cm-autoresize" readonly data-element="simple-togglebox">
 <div class="tpl__container" data-node="AppTemplate.container" data-element="template">
 
     <!-- [* ******* HEADER START ******* *] -->
 
     <div class="tpl__header" data-node="AppTemplate.header">
         <div class="tpl__header__inner">
-            <?php echo $this->Dropzone('header-main', 0, "app__area-header main"); ?>
+            <?php echo $this->Dropzone('header_main', 0, "app__area-header main"); ?>
         </div>
     </div>
 
@@ -72,7 +72,7 @@
 
     <div class="tpl__footer" data-node="AppTemplate.footer">
         <div class="tpl__footer__inner">
-            <?php echo $this->Dropzone('footer-main', 0, "app__area-footer main"); ?>
+            <?php echo $this->Dropzone('footer_main', 0, "app__area-footer main"); ?>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
 
 <div class="pt__box-content">
     <h2>Less переменные</h2>
-    <textarea class="cm-codebox cm-autoresize" readonly>
+    <textarea class="pt__box-code cm-autoresize" readonly>
 @AppTpl-Container-Size: wide;
 @AppTpl-Container-Width: 1170px;
 @AppTpl-Container-Align: center;
@@ -127,7 +127,7 @@
 <div class="pt__box-content">
     <h2>Управляющий mixin</h2>
     <p>Для понимая как именно less переменные влияют на структуру шаблона, ниже представлен управляющий less mixin. Он подойдёт для большинства случаев, но при необходимости его можно переопределить в файле <code>less/main.less</code> шаблона. Mixin применяется автоматически, <u>нет необходимости</u> копировать его в файл <code>less/main.less</code> шаблона.</p>
-    <textarea class="cm-codebox cm-autoresize" readonly data-element="simple-togglebox">
+    <textarea class="pt__box-code cm-autoresize" readonly data-element="simple-togglebox">
 .tpl__header__size (@value) when (@value = wide) {
     .tpl__header {
         padding: @AppTpl-Block-Padding;
@@ -205,7 +205,7 @@
     </ul>
 
     <p>Для блока <code>header</code> названия зон указываются с префиксом <code>header_</code>. Например зону с названием <code>logo</code> следует вставлять в таком виде:</p>
-    <textarea class="cm-codebox cm-autoresize" readonly><?php echo $this->Dropzone('header_logo', 0, "app__area-header logo"); ?></textarea>
+    <textarea class="pt__box-code cm-autoresize" readonly><?php echo $this->Dropzone('header_logo', 0, "app__area-header logo"); ?></textarea>
 
     <h3>Content</h3>
     <ul class="cm__list">
@@ -213,11 +213,12 @@
     </ul>
 
     <p>Зону контента следует вставлять в таком виде:</p>
-    <textarea class="cm-codebox cm-autoresize" readonly><?php echo $this->Dropzone('content', 0, "app__area-main"); ?></textarea>
+    <textarea class="pt__box-code cm-autoresize" readonly><?php echo $this->Dropzone('content', 0, "app__area-main"); ?></textarea>
 
     <h3>Footer</h3>
     <ul class="cm__list">
         <li><code>main</code> - стандартная универсальная зона;</li>
+        <li><code>main_secondary</code> - стандартная универсальная зона;</li>
         <li><code>copyright</code> - зона для копирайтов, прочей авторской информации. Module Content;</li>
         <li><code>icons</code> - социальные иконки. Module Social Media;</li>
         <li><code>links</code> - второстепенное меню. Module Menu;</li>
@@ -226,7 +227,7 @@
     </ul>
 
     <p>Для блока <code>footer</code> названия зон указываются с префиксом <code>footer_</code>. Например зону с названием <code>main</code> следует вставлять в таком виде:</p>
-    <textarea class="cm-codebox cm-autoresize" readonly><?php echo $this->Dropzone('footer_main', 0, "app__area-footer main"); ?></textarea>
+    <textarea class="pt__box-code cm-autoresize" readonly><?php echo $this->Dropzone('footer_main', 0, "app__area-footer main"); ?></textarea>
 </div>
 
 </body>

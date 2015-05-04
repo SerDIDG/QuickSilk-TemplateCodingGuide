@@ -75,7 +75,7 @@
         <h2>Пользовательские вьюхи</h2>
         <p>Иногда в зависимости от шаблона есть нужда переопределить текущую вьюху или добавить новую. Вьюхи находятся на сервере в директории <code>module/system/Page/view/page/block/menu/templates</code>. Заменять или добавлять новые вьюхи следует в директорию шаблона <code>public/web/ID/templates/Template_ID/view/page/block/menu/templates</code>, где ID - Microsite URL заполненный в форме создания микросайта, Template_ID - ID выбранного шаблона в форме создания микросайта.</p>
         <p>При написании стилей стоит учитывать, что у меню есть выравнивание и некоторые стили нужно прописывать в зависимости от него.</p>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 .app-mod__menu {
     &.theme-my {
         &.pull-left,
@@ -90,7 +90,7 @@
     }
 }</textarea>
         <h3>Задание отступов между элеметами горизонтального меню</h3>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 .app-mod__menu {
     &.theme-my {
         @item-indent: 24px;
@@ -98,7 +98,7 @@
     }
 }</textarea>
         <h3>Задание отступов между элеметами вертикального меню</h3>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 .app-mod__menu {
     &.vertical {
         &.theme-my {
@@ -111,18 +111,18 @@
 
         <h2>Пользовательская вьюха с разделительными черточками прописанными через класс</h2>
         <p>В примере ниже мы создадим пользовательскую вьюху на основе secondary либо переопределим вьюху secondary добавив класс <code>has-separator</code> отвечающий за разделительные черточки.</p>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 <div class="app__module app-mod__menu secondary has-separator <?php echo $this->Menu()->alignment($this->alignment); ?>" data-element="module-menu">
     /* ... */
 </div></textarea>
 
         <h2>Пользовательская вьюха с разделительными черточками прописанными через миксин</h2>
         <p>Ниже представлен пример для пользовательской вьюхи с сепараторами. Если между элементами меню нет отступов, нет нужды использовать миксин для сепараторов, разделители можно сделать и с помощью border.</p>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 <div class="app__module app-mod__menu theme-my <?php echo $this->Menu()->alignment($this->alignment); ?>" data-element="module-menu">
     /* ... */
 </div></textarea>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 .app-mod__menu {
     &.theme-my {
         @item-indent: 15px;
@@ -135,7 +135,7 @@
     }
 }</textarea>
         <p>Если нужно как-то иначе стилизировать сепаратор, можно прописать ему стили вручную. Стили стоит прописывать после миксинов сепараторов.</p>
-        <textarea class="cm-codebox cm-autoresize" readonly="">
+        <textarea class="pt__box-code cm-autoresize" readonly="">
 .app-mod__menu {
     &.theme-my {
         /* Mixins goes here */
