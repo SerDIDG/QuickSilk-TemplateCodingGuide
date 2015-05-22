@@ -46,7 +46,7 @@
     <p>Шаблон для QuickSilk CMS делится на три блока: <code>header</code>, <code>content</code> и <code>footer</code>. Каждый блок как минимум должен состоять из двух элементов - внешнего и внутреннего. Эти два элемента обязательны - на них навешаны специальные классы, например, для блока <code>header</code> это элементы с классами: внешний - <code>tpl__header</code>, внутренний - <code>tpl__header__inner</code>. Название классов обязательны - к ним привязываются стили, назначенные пользователем из админки. Внутренняя структура каждого блока может отличаться от эталонной, так же внутренний элемент может быть в другом месте по иерархии.</p>
     <p>Ниже представлен пример структуры пустого шаблона.</p>
     <textarea class="pt__box-code cm-autoresize" readonly data-element="simple-togglebox">
-<div class="tpl__container" data-node="AppTemplate.container" data-element="template">
+<div class="tpl__container" data-node="AppTemplate.container" data-element="app-template">
 
     <!-- [* ******* HEADER START ******* *] -->
 
@@ -193,15 +193,14 @@
     <h3>Header</h3>
     <ul class="cm__list">
         <li><code>main</code> - стандартная универсальная зона;</li>
+        <li><code>splash</code> - зона для splash изображения, которое обычно идёт перед шапкой сайта.</li>
         <li><code>logo</code> - лого сайта. Module Site Logo;</li>
         <li><code>info</code> - контактная информация, адрес, номер, итд. Module Content;</li>
         <li><code>icons</code> - социальные иконки. Module Social Media;</li>
-        <li><code>logo</code> - ссылка на логин. Module Login;</li>
-        <li><code>links</code> - второстепенное меню. Module Menu;</li>
+        <li><code>links</code> - ссылка на логин. Module Login;</li>
         <li><code>menu</code> - главное навигационное меню. Module Menu;</li>
         <li><code>search</code> - поле поиска по сайту. Module Search;</li>
         <li><code>langs</code> - ссылки смены языка. Module Language Switcher;</li>
-        <li><code>splash</code> - зона для splash изображения, которое обычно идёт перед шапкой сайта.</li>
     </ul>
 
     <p>Для блока <code>header</code> названия зон указываются с префиксом <code>header_</code>. Например зону с названием <code>logo</code> следует вставлять в таком виде:</p>
@@ -217,8 +216,8 @@
 
     <h3>Footer</h3>
     <ul class="cm__list">
-        <li><code>main</code> - стандартная универсальная зона;</li>
-        <li><code>additional</code> - дополнительная универсальная зона;</li>
+        <li><code>main</code> - стандартная универсальная зона. Как правило содержит копирайт, социальные иконки, горизонтальное secondary меню.;</li>
+        <li><code>additional</code> - дополнительная универсальная зона. Эта зона обычно находится над зоной main. В ней могут находится вертикальные меню, последние блог посты, форма контактов и тд;</li>
         <li><code>copyright</code> - зона для копирайтов, прочей авторской информации. Module Content;</li>
         <li><code>icons</code> - социальные иконки. Module Social Media;</li>
         <li><code>links</code> - второстепенное меню. Module Menu;</li>
