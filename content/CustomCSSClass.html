@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html class="is-adaptive is-guide">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Custom CSS Class</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+
+    <script type="text/javascript" src="../libs/common/js/polyfill.js"></script>
+    <script type="text/javascript" src="../libs/common/js/common.js"></script>
+    <script type="text/javascript" src="../libs/common/js/parts.js"></script>
+    <script type="text/javascript" src="../libs/common/js/modules.js"></script>
+    <script type="text/javascript" src="../libs/common/js/init.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/UA.js"></script>
+    <script type="text/javascript" src="../libs/common/js/components/Collector.js"></script>
+
+    <script type="text/javascript" src="../libs/application/js/Application.js"></script>
+
+    <script type="text/javascript">
+        cm.onReady(function(){
+            // Components
+            new Com.Collector()
+                .addEvent('onConstruct', function(collector, data){
+                    Part.Menu();
+                    Part.Autoresize(data['node']);
+                })
+                .construct();
+        });
+    </script>
+</head>
+
+<body>
+
+<h1 class="pt__box-title">Custom CSS Class</h1>
+<hr>
+
+<h2>Расположение файла настройки шаблона</h2>
+<p>public/web/{NAMESPACE}/templates/{TEMPLATE_ID}/config/config.json</p>
+
+<h2>Структура файла</h2>
+<textarea>
+{
+    "template": {
+        "blocks": {
+            "BLOCK_KEYWORD": {
+                "options": {
+                    "cssclasses": [
+                        "Classname A",
+                        "Classname B",
+                        "Classname C"
+                    ]
+                }
+            }
+        }
+    }
+}
+</textarea>
+
+<hr>
+
+<h2>Для того чтобы добавить для блока BLOCK_KEYWORD, новые цсс классы</h2>
+<ol>
+    <li>Создаем файл public/web/{NAMESPACE}/templates/{TEMPLATE_ID}/config/config.json</li>
+    <li>
+        Добавляем общую секцию
+        <textarea>
+{
+    "template": {
+        "blocks": {}
+    }
+}
+        </textarea>
+    </li>
+    <li>
+        Добавляем в часть template->blocks, для необходимого блока
+        <textarea>
+"BLOCK_KEYWORD": {
+    "options": {
+        "cssclasses": [
+            "Classname A",
+            "Classname B",
+            "Classname C"
+        ]
+    }
+}
+        </textarea>
+    </li>
+</ol>
+
+<hr>
+
+<h2>Пример файла config/config.json</h2>
+<textarea>
+{
+    "template": {
+        "blocks": {
+            "filegridlist": {
+                "options": {
+                    "cssclasses": [
+                        "Light",
+                        "Dark"
+                    ]
+                }
+            }
+        }
+    }
+}
+</textarea>
+
+</body>
+
+</html>
